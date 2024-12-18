@@ -1,0 +1,40 @@
+{
+  "name": "artcluthub",
+  "version": "1.0.0",
+  "description": "Backend for Art products and artirst, and users",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aelabassi/ArtCultHub.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "prisma",
+    "postgres",
+    "redis",
+    "arts",
+    "typescript"
+  ],
+  "author": "EL Abassi Abderrazaq, Nancy Kibara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aelabassi/ArtCultHub/issues"
+  },
+  "homepage": "https://github.com/aelabassi/ArtCultHub#readme",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/dotenv": "^6.1.1",
+    "@types/jsonwebtoken": "^9.0.7",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.17.0",
+    "jsonwebtoken": "^9.0.2",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.7.2"
+  }
+}
