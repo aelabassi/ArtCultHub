@@ -4,7 +4,8 @@
   "description": "Backend for Art products and artirst, and users",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest",
+    "dev": "ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,8 @@
   "dependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "jest": "^29.7.0",
+    "mocha": "^11.0.1"
   }
 }
