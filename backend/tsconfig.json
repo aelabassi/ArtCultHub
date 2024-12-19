@@ -1,0 +1,17 @@
+{
+    "extends": "@tsconfig/node20/tsconfig.json",
+    "compilerOptions": {
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "useUnkonwnInCatchVariables": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true,
+        "checkJs": true,
+        "allowSyntheticDefaultImports": false,
+        "esModuleInterop": false
+    }
+}
