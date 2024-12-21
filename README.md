@@ -1,13 +1,13 @@
 # **ArtCultHub Marketplace**
 
-**ArtCultHub** is an NFT and a digital art and culture marketplace that aims to connect Moroccan artists and artisans with a global audience. The platform enables users to showcase and sell digital versions of traditional crafts, including NFTs of cultural art, promoting Moroccan heritage while supporting local artists.
+**ArtCultHub** is an NFT and digital art and culture marketplace that aims to connect Moroccan artists and artisans with a global audience. The platform enables users to showcase and sell digital versions of traditional crafts, including NFTs of cultural art, promoting Moroccan heritage while supporting local artists.
 
 ---
 
 ## **Features**
 
 - **Frontend:** Developed with React.js for a dynamic and responsive user interface.
-- **Backend:** Built with Node.js, MongoDB, Redis, and Prisma for efficient data management and storage.
+- **Backend:** Powered by Node.js, PostgreSQL, Redis, and Prisma for scalable data management.
 - **Marketplace Functionalities:** 
   - Browse and search for art.
   - Add items to a wishlist or purchase directly.
@@ -25,11 +25,14 @@
 
 ### **Backend**
 - Node.js
-- MongoDB
+- TypeScript
+- PostgreSQL
 - Redis
 - Prisma (ORM)
 
 ### **Other Tools:**
+- **Visual Studio** for collaborative coding
+- **Discord & WhatsApp** for communication and planning
 - **Git and GitHub** for version control
 - **Figma** for prototyping and mockups
 - **Trello** for project management
@@ -87,7 +90,10 @@
 
 ## **Branching Strategy**
 
-- Each team member will work on their branch named after their names.
+- **Branches**:  
+  - `artFrontend`: For all frontend development.  
+  - `artBackend`: For all backend development.  
+- Team members must create features or bug fixes on separate branches based on the main frontend or backend branches.
 - Use Pull Requests (PRs) for merging changes into the main branch.
 
 ---
