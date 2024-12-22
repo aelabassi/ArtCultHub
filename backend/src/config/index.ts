@@ -17,10 +17,11 @@ if (stage === 'prod') {
 
 export default merge<envSecrets, Secret>({
     stage,
+    nodeEnv: process.env.NODE_ENV,
     port: 3000,
-    secrets: {
+    secret: {
         jwtSecret: process.env.JWT_SECRET,
-        jwtExp: process.env.JWT_EXP,
+        jwtExpire: process.env.JWT_EXP,
         dbUrl: process.env.DATABASE_URL,
     }
 }, envConfig);
