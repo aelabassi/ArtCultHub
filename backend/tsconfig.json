@@ -2,16 +2,18 @@
     "extends": "@tsconfig/node20/tsconfig.json",
     "compilerOptions": {
         "outDir": "dist",
+        "lib": ["esnext"],
         "moduleResolution": "node",
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "noImplicitAny": true,
         "noImplicitThis": true,
-        "useUnkonwnInCatchVariables": true,
+        "useUnknownInCatchVariables": true,
         "strictFunctionTypes": true,
         "strictNullChecks": true,
+        "allowJs": true,
         "checkJs": true,
         "allowSyntheticDefaultImports": false,
-        "esModuleInterop": false
+        "esModuleInterop": true
     }
 }
