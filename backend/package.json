@@ -1,12 +1,12 @@
 {
   "name": "artcluthub",
   "version": "1.0.0",
-  "description": "Backend for Art products and artirst, and users",
+  "description": "Backend for ArtCultHub",
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "dev": "NODE_ENV=development ts-node src/server.ts",
-    "prod": "NODE_ENV=production ts-node src/server.ts",
+    "dev": "NODE_ENV=development nodemon src/server.ts",
+    "prod": "NODE_ENV=production nodemon src/server.ts",
     "build": "npm install"
   },
   "repository": {
@@ -33,29 +33,29 @@
     "@types/dotenv": "^6.1.1",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/morgan": "^1.9.9",
-    "bcrypt": "^5.1.1",
-    "dotenv": "^16.4.7",
+    "@types/node": "^22.10.2",
     "eslint": "^9.17.0",
-    "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "ts-node": "^10.9.2",
     "tsc-watch": "^6.2.1",
-    "typescript": "^5.7.2"
-  },
-  "dependencies": {
-    "@prisma/client": "^6.1.0",
-    "@tsconfig/node20": "^20.1.4",
-    "@types/express": "^5.0.0",
-    "@types/lodash.merge": "^4.6.9",
-    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
     "concurrently": "^9.1.0",
-    "express": "^4.21.2",
-    "express-joi-validation": "^6.0.0",
+    "@tsconfig/node20": "^20.1.4",
     "jest": "^29.7.0",
-    "joi": "^17.13.3",
-    "lodash.merge": "^4.6.2",
     "mocha": "^11.0.1",
     "nodemon": "^3.1.9",
     "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.1.0",
+    "@types/express": "^5.0.0",
+    "@types/lodash.merge": "^4.6.9",
+    "lodash.merge": "^4.6.2",
+    "express": "^4.21.2",
+    "express-joi-validation": "^6.0.0",
+    "joi": "^17.13.3",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.4.7"
   }
 }
