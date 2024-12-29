@@ -31,11 +31,11 @@
 - Prisma (ORM)
 
 ### **Other Tools:**
-- **Visual Studio** for collaborative coding
-- **Discord & WhatsApp** for communication and planning
-- **Git and GitHub** for version control
-- **Figma** for prototyping and mockups
-- **Trello** for project management
+- **Visual Studio** for collaborative coding.
+- **Discord & WhatsApp** for communication and planning.
+- **Git and GitHub** for version control.
+- **Figma** for prototyping and mockups.
+- **Trello** for project management.
 
 ---
 
@@ -117,4 +117,4 @@
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
----
+test
