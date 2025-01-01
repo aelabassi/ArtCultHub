@@ -8,23 +8,12 @@ datasource db {
 }
 
 model Product {
-  id      String   @id
-  name    String   @db.VarChar(255)
-  price   Float
-  ownerId String
-  User    User     @relation(fields: [ownerId], references: [id])
-  Update  Update[]
-}
-
-model Update {
-  id        String        @id
-  status    UPDATE_STATUS @default(IN_PROGRESS)
-  createdAt DateTime      @default(now())
-  updatedAt DateTime
-  version   String?
-  asset     String?
-  productId String
-  Product   Product       @relation(fields: [productId], references: [id])
+  id          String @id
+  name        String @db.VarChar(255)
+  price       Float
+  description String
+  ownerId     String
+  User        User   @relation(fields: [ownerId], references: [id])
 }
 
 model User {
