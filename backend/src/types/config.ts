@@ -10,4 +10,3 @@ export type envSecrets = {
     port: number;
     secret: Secret;
 };
-
