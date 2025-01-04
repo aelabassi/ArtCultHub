@@ -1,12 +1,11 @@
 import express, { Response, Request } from 'express';
-import morgan from 'morgan';
 import config from './config';
 import artRoutes from './routes/artRoutes';
 
 const app = express();
 
 // middlewares
-app.use(morgan('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 

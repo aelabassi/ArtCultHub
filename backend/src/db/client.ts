@@ -1,22 +1,9 @@
-import { Pool } from 'pg';
-import config from '../config';
+import { PrismaClient } from '@prisma/client';
 
-const pool = new Pool({
-    connectionString: config.secret.databaseUrl
-});
+declare global {
+  var prisma: PrismaClient | undefined;
+}
 
-// Test the database connection when the application starts
-pool.query('SELECT NOW()', (err, result) => {
-    if (err) {
-        console.error('Error executing query:', err.stack);
-    } else {
-        console.log('Successfully connected to PostgreSQL database at', result.rows[0].now);
-    }
-});
+export const prisma = global.prisma || new PrismaClient();
 
-export const query = (text: string, params?: any[]) => {
-    console.log('Executing query:', text, params);
-    return pool.query(text, params);
-};
-
-export default pool;
+if (process.env.NODE_ENV !== 'production') global.prisma = prisma;
