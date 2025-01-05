@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.first img{
+    width: 5rem;
+}
+.Footer-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    background-color: rgb(117, 159, 146);
+}
+p{
+    width: 20rem;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
