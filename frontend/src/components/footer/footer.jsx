@@ -39,7 +39,6 @@ function Footer() {
                     <h3>Newsletter</h3>
                     <input type="email" />
                     <div className='social-media'>
-                    <img src="{insta}" alt="" />
                     </div>
                 </div>
             </div>
