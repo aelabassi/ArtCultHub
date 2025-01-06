@@ -1,5 +1,5 @@
 import merge from 'lodash.merge'
-import { envSecrets, Secret } from '../@types/config'
+import { envSecrets, Secret } from '../@types'
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 const stage = process.env.STAGE || 'dev'
@@ -21,7 +21,7 @@ export default merge<envSecrets, Secret>(
     secret: {
       jwtSecret: process.env.JWT_SECRET,
       jwtExpire: process.env.JWT_EXP,
-      dbUrl: process.env.DATABASE_URL,
+      dbUrl: process.env.MONGO_URL,
     },
   },
   envConfig,

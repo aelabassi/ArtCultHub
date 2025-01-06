@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose'
-import { Review } from '../src/@types/review'
+import { Review } from '../@types'
 
 export const RveiewSchema = new Schema<Review>(
   {
