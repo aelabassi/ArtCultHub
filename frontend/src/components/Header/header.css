@@ -9,7 +9,7 @@
 }
 
 .header__shrink {
-  background: #14141f;
+  background: #343444;
   box-shadow: 2px 2px 4px -2px #ACB992;
 }
 
@@ -93,7 +93,7 @@
     right: 0;
     width: 250px;
     height: 100%;
-    background: #1a743d;
+    background: #343444;
     z-index: 333333;
     flex-direction: column;
     padding-top: 40px;
