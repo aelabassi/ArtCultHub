@@ -1,8 +1,13 @@
-import {User} from './user'
+import { User } from './user'
+import { Review } from './review'
 export type Product = {
-    id: string
-    name: string
-    price: number
-    description: string
-    user: User
+  user: User
+  name: string
+  description: string
+  price: number
+  imageUrl: string
+  category: string
+  rating: number
+  numReviews: number
+  reviews: Review[]
 }

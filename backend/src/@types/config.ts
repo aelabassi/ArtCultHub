@@ -1,13 +1,12 @@
 export type Secret = {
-    jwtSecret: string | undefined;
-    jwtExpire: string | undefined;
-    dbUrl: string | undefined;
-};
+  jwtSecret: string | undefined
+  jwtExpire: string | undefined
+  dbUrl: string | undefined
+}
 
 export type envSecrets = {
-    stage: string;
-    nodeEnv: string | undefined;
-    port: number;
-    secret: Secret;
-};
-
+  stage: string
+  nodeEnv: string | undefined
+  port: number
+  secret: Secret
+}

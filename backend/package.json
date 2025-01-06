@@ -11,7 +11,7 @@
     "pull": "prisma db pull",
     "generate": "prisma generate",
     "build": "npm install",
-    "format":"prettier --write \"**/*.{html,css,js,ts,jsx,tsx}\"",
+    "format": "prettier --write \"**/*.{html,css,js,ts,jsx,tsx}\"",
     "lint": "eslint . --ext .ts"
   },
   "repository": {
@@ -67,6 +67,7 @@
     "express-joi-validation": "^6.0.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
-    "lodash.merge": "^4.6.2"
+    "lodash.merge": "^4.6.2",
+    "mongoose": "^8.9.3"
   }
 }
