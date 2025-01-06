@@ -4,10 +4,13 @@
   "description": "Backend for Art products and artirst, and users",
   "main": "index.js",
   "scripts": {
-    "test": "vitest",
     "dev": "NODE_ENV=development nodemon src/server.ts",
     "prod": "NODE_ENV=production nodemon src/server.ts",
-    "build": "npm install"
+    "build": "npm install",
+    "start": "node dist/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -30,8 +33,12 @@
   "homepage": "https://github.com/aelabassi/ArtCultHub#readme",
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/dotenv": "^6.1.1",
     "@types/jsonwebtoken": "^9.0.7",
+    "@types/lodash": "^4.17.14",
+    "@types/lodash.merge": "^4.6.9",
+    "@types/morgan": "^1.9.9",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "eslint": "^9.17.0",
@@ -41,10 +48,16 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "@prisma/client": "^6.1.0",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "jest": "^29.7.0",
-    "mocha": "^11.0.1"
+    "lodash.merge": "^4.6.2",
+    "mocha": "^11.0.1",
+    "morgan": "^1.10.0",
+    "zod": "^3.24.1"
   }
 }

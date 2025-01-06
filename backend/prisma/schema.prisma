@@ -7,37 +7,55 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id          Int       @id @default(autoincrement())
+  email       String    @unique
+  username    String
+  password    String
+  description String?
+  products    Product[]
+  comments    Comment[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
 model Product {
-  id      String   @id
-  name    String   @db.VarChar(255)
-  price   Float
-  ownerId String
-  User    User     @relation(fields: [ownerId], references: [id])
-  Update  Update[]
+  id          Int       @id @default(autoincrement())
+  name        String    @db.VarChar(255)
+  price       Float
+  description String
+  ownerId     Int
+  owner       User      @relation(fields: [ownerId], references: [id])
+  updates     Update[]
+  comments    Comment[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
 
 model Update {
-  id        String        @id
+  id        Int           @id @default(autoincrement())
   status    UPDATE_STATUS @default(IN_PROGRESS)
   createdAt DateTime      @default(now())
-  updatedAt DateTime
+  updatedAt DateTime      @updatedAt
   version   String?
   asset     String?
-  productId String
-  Product   Product       @relation(fields: [productId], references: [id])
+  productId Int
+  product   Product       @relation(fields: [productId], references: [id])
 }
 
-model User {
-  id        String    @id
-  email     String    @unique
-  username  String    @unique
-  password  String
-  createdAt DateTime  @default(now())
-  Product   Product[]
+model Comment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String
+  productId Int
+  userId    Int
+  product   Product  @relation(fields: [productId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 enum UPDATE_STATUS {
-  DAPECRATED
+  DEPRECATED
   IN_PROGRESS
   SHIPPED
 }
