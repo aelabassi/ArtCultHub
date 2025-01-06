@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import "./header.css";
 import { Container } from "reactstrap";
+import logo from "../../assets/logo.png";
 
 import { NavLink, Link } from "react-router-dom";
 
@@ -52,12 +53,7 @@ const Header = () => {
       <Container>
         <div className="navigation">
           <div className="logo">
-            <h2 className=" d-flex gap-2 align-items-center ">
-              <span>
-                <i class="ri-fire-fill"></i>
-              </span>
-              NFTs
-            </h2>
+            <img src={logo} alt="ArtCultHub Logo" className="logo__image" />
           </div>
 
           <div className="nav__menu" ref={menuRef} onClick={toggleMenu}>

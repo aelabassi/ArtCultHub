@@ -3,12 +3,13 @@
 }
 
 .hero__content h2 {
+  color: #CBA35C;
   line-height: 55px;
   font-size: 2.5rem;
 }
 
 .hero__content h2 span {
-  background: linear-gradient(-45deg, #e250e5, #4b50e6, #e250e5, #4b50e6);
+  background: linear-gradient(-45deg, #663e24, #A4907C, #7f1212, #662427);
   background-size: 100% 100%;
   background-clip: text;
   -webkit-text-stroke: 3px transparent;
@@ -27,7 +28,7 @@
   outline: none;
   padding: 7px 25px !important;
   border-radius: 50px !important;
-  border: 1px solid #5142fc !important;
+  border: 1.5px solid #25748b !important;
   font-size: 0.9rem;
   background: transparent;
 }
@@ -59,7 +60,7 @@
 
 @media only screen and (max-width: 992px) {
   .hero__img {
-    width: 300px;
+    width: 200px;
   }
 
   .hero__section {
@@ -67,13 +68,15 @@
   }
 
   .hero__content h2 {
+    color: #030302;
     font-size: 1.5rem;
     line-height: 40px;
   }
 
   .hero__content p {
-    font-size: 0.8rem;
-    line-height: 25px;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 35px;
   }
 
   .create__btn,

@@ -1,49 +1,159 @@
-import logo from '../../assets/logo.png';
-import insta from '../../assets/insta.png';
+import React from "react";
 
-import './footer.css' 
-export function ShowListe({list}){
-    return(
-        <ul>
-        {list.map((e,index)=> <>
-        <li key={index}><a href="#">{e}</a></li>
-        </>)}
-        </ul>
-    )
-}
+import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import "./Footer.css";
+import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
-function Footer() {
-    const list1 = ["Author Profile", "Create Item", "Collection", "Edit Profile"];
-    const list2 = ["Help Center", "Partner", "Community", "Activity"];
-    const list3 = ["About", "Career", "Ranking", "Contact Us"];
-    return (
-        <>
-            <div className='Footer-container'>
-                <div className='first'>
-                    <img src={logo} alt="HI LOGO" />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel esse assumenda officiis perferendis sit eaque voluptatum, accusantium .</p>
-                </div>
-                <div>
-                    <h3>My account</h3>
-                    <ShowListe list={list1} />
-                </div>
-                <div>
-                    <h3>Ressources</h3>
-                    <ShowListe list={list2} />
-                </div>
-                <div>
-                    <h3>Company</h3>
-                    <ShowListe list={list3} />
-                </div>
-                <div>
-                    <h3>Newsletter</h3>
-                    <input type="email" />
-                    <div className='social-media'>
-                    </div>
-                </div>
+const MY__ACCOUNT = [
+  {
+    display: "Author Profile",
+    url: "/seller-profile",
+  },
+  {
+    display: "Create Item",
+    url: "/create",
+  },
+  {
+    display: "Collection",
+    url: "/market",
+  },
+  {
+    display: "Edit Profile",
+    url: "/edit-profile",
+  },
+];
+
+const RESOURCES = [
+  {
+    display: "Help Center",
+    url: "#",
+  },
+  {
+    display: "Partner",
+    url: "#",
+  },
+  {
+    display: "Community",
+    url: "#",
+  },
+  {
+    display: "Activity",
+    url: "#",
+  },
+];
+
+const COMPANY = [
+  {
+    display: "About",
+    url: "#",
+  },
+  {
+    display: "Career",
+    url: "#",
+  },
+  {
+    display: "Ranking",
+    url: "#",
+  },
+  {
+    display: "Contact Us",
+    url: "/contact",
+  },
+];
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <Container>
+        <Row>
+          <Col lg="3" md="6" sm="6" className="mb-4">
+            <div className="logo">
+              <img src={logo} alt="ArtCultHub Logo" className="logo__image" />
+              <p>
+              Empowering Moroccan artists to showcase and sell 
+              their digital art and cultural masterpieces globally. 
+              Join us in celebrating and preserving Morocco's rich artistic heritage.
+              </p>
             </div>
-        </>
-    );
-}
+          </Col>
+
+          <Col lg="2" md="3" sm="6" className="mb-4">
+            <h5>My Account</h5>
+            <ListGroup className="list__group">
+              {MY__ACCOUNT.map((item, index) => (
+                <ListGroupItem key={index} className="list__item">
+                  <Link to={item.url}> {item.display} </Link>
+                </ListGroupItem>
+              ))}
+            </ListGroup>
+          </Col>
+
+          <Col lg="2" md="3" sm="6" className="mb-4">
+            <h5>Resources</h5>
+            <ListGroup className="list__group">
+              {RESOURCES.map((item, index) => (
+                <ListGroupItem key={index} className="list__item">
+                  <Link to={item.url}> {item.display} </Link>
+                </ListGroupItem>
+              ))}
+            </ListGroup>
+          </Col>
+
+          <Col lg="2" md="3" sm="6" className="mb-4">
+            <h5>Company</h5>
+            <ListGroup className="list__group">
+              {COMPANY.map((item, index) => (
+                <ListGroupItem key={index} className="list__item">
+                  <Link to={item.url}> {item.display} </Link>
+                </ListGroupItem>
+              ))}
+            </ListGroup>
+          </Col>
+
+          <Col lg="3" md="6" sm="6" className="mb-4">
+            <h5>Newsletter</h5>
+            <input type="text" className="newsletter" placeholder="Email" />
+            <div className="social__links d-flex gap-3 align-items-center ">
+              <span>
+                <Link to="#">
+                  <i class="ri-facebook-line"></i>
+                </Link>
+              </span>
+              <span>
+                <Link to="#">
+                  <i class="ri-instagram-line"></i>
+                </Link>
+              </span>
+              <span>
+                <Link to="#">
+                  <i class="ri-twitter-line"></i>
+                </Link>
+              </span>
+              <span>
+                <Link to="#">
+                  <i class="ri-telegram-line"></i>
+                </Link>
+              </span>
+              <span>
+                <Link to="#">
+                  <i class="ri-discord-line"></i>
+                </Link>
+              </span>
+            </div>
+          </Col>
+
+          <Col lg="12" className=" mt-4 text-center">
+            <p className="copyright">
+              {" "}
+              Copyrights 2025, Developed by Layla ABKARI, Chaimae AAfif, Abderrazaq ABASSI.
+              All Rights Reserved.{" "}
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
+  );
+};
 
 export default Footer;
