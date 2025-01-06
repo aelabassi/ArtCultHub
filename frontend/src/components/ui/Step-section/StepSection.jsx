@@ -7,25 +7,25 @@ import "./step-section.css";
 const STEP__DATA = [
   {
     title: "Setup your wallet",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi, facilis voluptatum fugit illum ",
+    desc: "Start by setting up a secure wallet to manage your digital assets. This will enable you to store and trade NFTs while ensuring your transactions are safe. ",
     icon: "ri-wallet-line",
   },
 
   {
     title: "Create your collection",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi, facilis voluptatum fugit illum ",
+    desc: "Curate and showcase your digital artwork or cultural pieces in a personalized collection. Highlight the beauty of Moroccan heritage through unique designs. ",
     icon: "ri-layout-masonry-line",
   },
 
   {
     title: "Add your NFTs",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi, facilis voluptatum fugit illum ",
+    desc: "Mint your digital creations into NFTs. Share the stories behind your art and make them accessible to a global audience. ",
     icon: "ri-image-line",
   },
 
   {
     title: "List them for sale",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi, facilis voluptatum fugit illum ",
+    desc: "Display your NFTs in the marketplace for collectors to discover and purchase. Promote Moroccan art and culture while earning from your creations. ",
     icon: "ri-list-check",
   },
 ];
