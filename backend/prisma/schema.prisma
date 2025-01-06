@@ -12,8 +12,9 @@ model Product {
   name        String @db.VarChar(255)
   price       Float
   description String
-  ownerId     String
   User        User   @relation(fields: [ownerId], references: [id])
+  ownerId     String
+
 }
 
 model User {
