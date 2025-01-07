@@ -1,5 +1,9 @@
 # **ArtCultHub Marketplace**
 
+<p align="center">
+  <img src="https://github.com/aelabassi/ArtCultHub/blob/main/frontend/src/assets/logo-ach.png" alt="ArtCultHub Logo" width="300">
+</p>
+
 **ArtCultHub** is an NFT and digital art and culture marketplace that aims to connect Moroccan artists and artisans with a global audience. The platform enables users to showcase and sell digital versions of traditional crafts, including NFTs of cultural art, promoting Moroccan heritage while supporting local artists.
 
 ---
@@ -31,11 +35,11 @@
 - Prisma (ORM)
 
 ### **Other Tools:**
-- **Visual Studio** for collaborative coding
-- **Discord & WhatsApp** for communication and planning
-- **Git and GitHub** for version control
-- **Figma** for prototyping and mockups
-- **Trello** for project management
+- **Visual Studio** for collaborative coding.
+- **Discord & WhatsApp** for communication and planning.
+- **Git and GitHub** for version control.
+- **Figma** for prototyping and mockups.
+- **Trello** for project management.
 
 ---
 
@@ -116,5 +120,3 @@
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
-
----
