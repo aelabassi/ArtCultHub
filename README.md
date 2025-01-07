@@ -26,7 +26,7 @@
 ### **Backend**
 - Node.js
 - TypeScript
-- PostgreSQL
+- MongoDB
 - Redis
 - Prisma (ORM)
 
