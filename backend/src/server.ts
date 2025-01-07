@@ -18,7 +18,6 @@ app.use(cors())
 app.use(express.json() as RequestHandler)
 app.use(express.urlencoded({ extended: true }))
 
-// handlers
 // User route
 app.use('/api', UserRouter);
 
