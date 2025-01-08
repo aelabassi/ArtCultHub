@@ -11,7 +11,7 @@ const NftCard = (props) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="single__nft__card">
+    <div className="single__nft__card" style={{backgroundColor : "#4F6F52", color : "black"}}>
       <div className="nft__img">
         <img src={imgUrl} alt="" className="w-100" />
       </div>

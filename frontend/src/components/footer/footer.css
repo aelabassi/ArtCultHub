@@ -1,11 +1,13 @@
-.footer h5 {
-    font-size: 1.1rem;
-    color: #fff;
+.footer h5 , .footer p{
+    color: #1A4D2E;
   }
-  
+  .footer h5{
+    font-size: 1.1rem;
+  }
+
   .footer {
-    padding-bottom: 30px;
-    background: #000;
+    padding-bottom: 5px;
+    background: #E8DFCA;
   }
   
   .list__item {
@@ -16,8 +18,7 @@
   
   .list__item a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.772);
-  
+    color: #1A4D2E;
     font-size: 0.9rem;
   }
   
@@ -44,9 +45,7 @@
   
   .social__links span a {
     text-decoration: none;
-  
-    color: rgba(255, 255, 255, 0.772);
-  
+    color: #1A4D2E;
     font-size: 1.2rem;
     font-weight: 400;
     transition: 0.3s;
