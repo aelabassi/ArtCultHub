@@ -11,7 +11,7 @@
 *.ts                    @aelabassi @nancie6695
 
 # Backend
-/backend/               @aelabassi @ancie6695
-/backend/**/**.ts       @aelabassi @ancie6695
-/backend/**/**.js       @aelabassi @ancie6695
-*.ts                    @aelabassi @ancie6695
+/backend/               @aelabassi @nancie6695
+/backend/**/**.ts       @aelabassi @nancie6695
+/backend/**/**.js       @aelabassi @nancie6695
+*.ts                    @aelabassi @nancie6695
