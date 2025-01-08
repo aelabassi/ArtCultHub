@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import CommonSection from "./ui/Common-section/CommonSection";
+import CommonSection from "../components/ui/Common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 
 const Contact = () => {

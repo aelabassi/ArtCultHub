@@ -1,11 +1,11 @@
 import React from "react";
 
-import CommonSection from "./ui/Common-section/CommonSection";
+import CommonSection from "../components/ui/Common-section/CommonSection";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import { NFT__DATA } from "../assets/data/data";
 
-import LiveAuction from "./ui/Live-auction/LiveAuction";
+import LiveAuction from "../components/ui/Live-auction/LiveAuction";
 
 import "../styles/nft-details.css";
 
