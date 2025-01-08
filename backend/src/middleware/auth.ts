@@ -19,18 +19,22 @@ declare global {
 export const auth = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const token = req.header('Authorization')?.replace('Bearer ', '');
-
+    
     if (!token) {
-      throw new Error();
+      throw new Error('No authentication token provided');
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
+    if (!decoded.userId) {
+      throw new Error('Invalid token payload');
+    }
+
     const user = await prisma.user.findUnique({
       where: { id: decoded.userId }
     });
 
     if (!user) {
-      throw new Error();
+      throw new Error('User not found');
     }
 
     req.user = { id: user.id };
