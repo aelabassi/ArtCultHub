@@ -1,26 +1,52 @@
-import { Pool } from 'pg';
+import { MongoClient } from 'mongodb';
 import config from '../config';
 
-const pool = new Pool({
-    connectionString: config.databaseUrl
-});
+const client = new MongoClient(config.databaseUrl);
 
-pool.connect((err, client, release) => {
-    if (err) {
-        return console.error('Error acquiring client:', err.stack);
+// Connection function
+async function connect() {
+    try {
+        await client.connect();
+        console.log('Successfully connected to MongoDB database');
+        return client;
+    } catch (err) {
+        console.error('Error connecting to MongoDB:', err.stack);
+        throw err;
     }
-    client.query('SELECT NOW()', (err, result) => {
-        release();
-        if (err) {
-            return console.error('Error executing query:', err.stack);
+}
+
+// Query wrapper function
+async function query(collection: string, queryType: string, params: any = {}) {
+    try {
+        const db = client.db();
+        const coll = db.collection(collection);
+        
+        console.log('Executing query:', queryType, 'with params:', params);
+        
+        switch (queryType) {
+            case 'find':
+                return await coll.find(params).toArray();
+            case 'findOne':
+                return await coll.findOne(params);
+            case 'insertOne':
+                return await coll.insertOne(params);
+            case 'updateOne':
+                return await coll.updateOne(params.filter, params.update);
+            case 'deleteOne':
+                return await coll.deleteOne(params);
+            default:
+                throw new Error(`Unknown query type: ${queryType}`);
         }
-        console.log('Successfully connected to PostgreSQL database');
-    });
-});
+    } catch (err) {
+        console.error('Error executing query:', err.stack);
+        throw err;
+    }
+}
 
-export const query = (text: string, params?: any[]) => {
-    console.log('Executing query:', text, params);
-    return pool.query(text, params);
-};
+// Close connection
+async function close() {
+    await client.close();
+    console.log('MongoDB connection closed');
+}
 
-export default pool;
+export { connect, query, close };
