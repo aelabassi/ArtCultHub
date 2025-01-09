@@ -2,10 +2,17 @@ import React from "react";
 import "../styles/signin.css";
 import CommonSection from "../components/ui/Common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
-import { FaUser } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
+import { FaUser, FaLock } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
+
   return (
     <>
     <CommonSection title="SignIn/SignUp" />
@@ -14,7 +21,7 @@ const SignIn = () => {
           <Row>
             <Col  className="mb-4">
             <div className="wrapper">
-      <form action="">
+      <form onSubmit={handleSignIn}>
         <h1>Login</h1>
         <div className="input_box">
             <input type="email" placeholder="Email" required />
