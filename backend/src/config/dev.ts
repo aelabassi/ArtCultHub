@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 export default {
   port: 5000,
@@ -7,5 +7,5 @@ export default {
     jwtSecret: process.env.JWT_SECRET,
     jwtExpire: process.env.JWT_EXP,
     dbUrl: process.env.MONGO_URL_DEV,
-  }
+  },
 }
