@@ -1,10 +1,12 @@
 import React from "react";
+import Menu from "../components/Dashboard/Menu";
+import Container from "../components/Dashboard/Container";
 
 const Dashboard = () => {
   return (
     <div>
-      <h1>Welcome to the Dashboard</h1>
-      <p>Manage your activities and explore features here.</p>
+      <Menu />
+      <Container />
     </div>
   );
 };
