@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    margin-left: 350px;
+    margin: auto;
 }
 
 .wrapper h1 {
