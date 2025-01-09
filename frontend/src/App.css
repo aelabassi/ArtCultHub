@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-body {
+body.public-theme {
   background-image: url('../src/assets/craft.PNG');
   background-size: cover;
   background-repeat: no-repeat;

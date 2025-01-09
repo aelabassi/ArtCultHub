@@ -1,8 +1,12 @@
-import "./App.css";
-import Layout from "./components/Layout/Layout";
+import React from "react";
+import { useAuth } from "./context/AuthContext";
+import PublicRoutes from "./routes/PublicRoutes";
+import DashboardRoutes from "./routes/DashboardRoutes";
 
-function App() {
-  return <Layout />;
-}
+const App = () => {
+  const { isSignedIn } = useAuth();
+
+  return isSignedIn ? <DashboardRoutes /> : <PublicRoutes />;
+};
 
 export default App;

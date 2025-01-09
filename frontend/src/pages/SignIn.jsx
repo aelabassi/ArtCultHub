@@ -4,12 +4,14 @@ import CommonSection from "../components/ui/Common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const SignIn = () => {
+  const { signIn } = useAuth();
   const navigate = useNavigate();
 
-  const handleSignIn = (e) => {
-    e.preventDefault();
+  const handleSignIn = () => {
+    signIn();
     navigate("/dashboard");
   };
 

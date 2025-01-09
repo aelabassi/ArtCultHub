@@ -1,0 +1,28 @@
+/* Dashboard Main Theme */
+.App.dashboard-theme { 
+  width: 100%;
+  height: 100vh;
+  background: #121026;
+  display: flex;
+  flex-direction: column; /* Ensure proper stacking of elements like headers and content */
+  overflow: hidden;
+}
+
+/* Hide Scrollbar */
+.App::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in WebKit browsers */
+}
+
+/* Enable Scrolling on Small Screens */
+@media only screen and (max-width: 525px) {
+  .App.dashboard-theme {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto; /* Enable vertical scroll */
+  }
+}
+
+/* Fallback for other browsers (non-WebKit) */
+.App.dashboard-theme {
+  scrollbar-width: none; /* Firefox: Hides scrollbar */
+  -ms-overflow-style: none; /* IE 10+: Hides scrollbar */
+}
