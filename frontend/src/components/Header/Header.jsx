@@ -80,6 +80,13 @@ const Header = () => {
               </span>
               <Link to="/wallet">Connect Wallet</Link>
             </button>
+            <button className="btn d-flex gap-2 align-items-center">
+              <span>
+                <i class="ri-account-pin-circle-line"></i>
+              </span>
+              <Link to="/signin">Sign In/ Sign UP</Link>
+            </button>
+            
 
             <span className="mobile__menu">
               <i class="ri-menu-line" onClick={toggleMenu}></i>

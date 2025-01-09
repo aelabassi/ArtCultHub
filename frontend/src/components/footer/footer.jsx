@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import "./footer.css";
+import "./Footer.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
