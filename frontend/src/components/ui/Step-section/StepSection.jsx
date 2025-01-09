@@ -19,7 +19,7 @@ const STEP__DATA = [
 
   {
     title: "Add your NFTs",
-    desc: "Mint your digital creations into NFTs. Share the stories behind your art and make them accessible to a global audience. ",
+    desc: "Mint your digital creations into NFTs. Share the stories and inspirations behind your art, making them accessible to a global audience of collectors. ",
     icon: "ri-image-line",
   },
 
