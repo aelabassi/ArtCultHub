@@ -27,7 +27,7 @@ function MainContainer() {
           <div className="textContainer">
             <h1>Round Hall</h1>
             <h2>199 MAD</h2>
-            <p>Uploaded by Alexander Vernof</p>
+            <p>Uploaded by Youness Daoudi</p>
             <div className="bid">
               <a href="/#" className="button">
                 Bid Now
@@ -58,18 +58,18 @@ function MainContainer() {
                 Art
               </a>
               <a href="/#" className="button2">
-                Games
+                Music
               </a>
             </div>
           </div>
 
           <main>
-            <CardMain imgSrc={Card1} title={"Cubic Thunder"} hearts={"65"} />
-            <CardMain imgSrc={Card2} title={"Pokemon Ball"} hearts={"65"} />
-            <CardMain imgSrc={Card3} title={"Pyramid God"} hearts={"65"} />
-            <CardMain imgSrc={Card4} title={"Stunning Cube"} hearts={"65"} />
-            <CardMain imgSrc={Card5} title={"Start Crystal"} hearts={"65"} />
-            <CardMain imgSrc={Card6} title={"Crystal Bird"} hearts={"65"} />
+            <CardMain imgSrc={Card1} title={"Dresses Indians"} hearts={"127"} />
+            <CardMain imgSrc={Card2} title={"Silk Threads"} hearts={"150"} />
+            <CardMain imgSrc={Card3} title={"Dishes Chamaliy"} hearts={"165"} />
+            <CardMain imgSrc={Card4} title={"Light Dream"} hearts={"89"} />
+            <CardMain imgSrc={Card5} title={"Caftan Randa"} hearts={"65"} />
+            <CardMain imgSrc={Card6} title={"Food Coach"} hearts={"18"} />
           </main>
         </div>
       </div>

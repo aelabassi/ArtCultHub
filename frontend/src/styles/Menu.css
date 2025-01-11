@@ -1,12 +1,12 @@
 menu {
   width: 100px;
   height: 100%;
-  background: #19162c;
+  background: #413d2e;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  position: sticky;
+  position: fixed;
   top: 0;
 }
 
@@ -26,15 +26,15 @@ menu ul {
 menu ul li {
   list-style: none;
   margin: 20px 0;
+  padding-top: 30px;
   position: relative;
-  color: #8c8a95;
   width: 100%;
   text-align: center;
 }
 
 menu ul li a {
   font-size: 24px;
-  color: #8c8a95;
+  color: #d0edc7;
   text-decoration: none;
   transition: all 0.3s;
 }
@@ -43,7 +43,7 @@ menu ul li a::before {
   position: absolute;
   content: "";
   top: 5px;
-  left: -10px;
+  left: 5px;
   width: 0px;
   height: 20px;
   background: #b1147d;

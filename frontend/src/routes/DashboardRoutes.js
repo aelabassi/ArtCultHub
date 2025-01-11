@@ -6,9 +6,9 @@ import "../index.css";
 
 const DashboardRoutes = () => {
   useEffect(() => {
-    document.body.className = "dashboard-theme"; // Optional: Add a class to the body for further styling.
+    document.body.classList.add("App", "dashboard-theme"); // Add both classes
     return () => {
-      document.body.className = "";
+      document.body.classList.remove("App", "dashboard-theme"); // Remove them when component unmounts
     };
   }, []);
 

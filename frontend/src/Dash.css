@@ -1,15 +1,15 @@
 /* Dashboard Main Theme */
-.App.dashboard-theme { 
+.dashboard-container { 
   width: 100%;
   height: 100vh;
-  background: #121026;
+  background: #7c6552;
   display: flex;
   flex-direction: column; /* Ensure proper stacking of elements like headers and content */
   overflow: hidden;
 }
 
 /* Hide Scrollbar */
-.App::-webkit-scrollbar {
+.App.dashboard-theme::-webkit-scrollbar {
   display: none; /* Hides scrollbar in WebKit browsers */
 }
 

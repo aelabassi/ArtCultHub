@@ -17,12 +17,12 @@ function CardMain({ imgSrc, title, hearts }) {
       <div className="stat">
         <div>
           <p>
-            Current Bid<span>1.2 MAD</span>
+            Current Bid<span>249 MAD</span>
           </p>
         </div>
         <div>
           <p>
-            Ending In<span>1d:12h:10m</span>
+            Ending In<span>2d:12h:54m</span>
           </p>
         </div>
       </div>

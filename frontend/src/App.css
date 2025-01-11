@@ -15,7 +15,7 @@ body.public-theme {
   font-family: "Roboto", sans-serif;
 }
 
-body::before {
+body.public-theme::before {
   content: "";
   position: fixed;
   top: 0;

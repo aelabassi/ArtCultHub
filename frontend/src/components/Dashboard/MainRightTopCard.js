@@ -10,11 +10,11 @@ function MainRightTopCard() {
 
       <div className="earning">
         <p>
-          Artwork Sold <span>187</span>
+          Artwork Sold <span>497</span>
         </p>
 
         <p>
-          Artwork Canceled <span>5</span>
+          Artwork Canceled <span>6</span>
         </p>
 
         <p>
@@ -22,11 +22,11 @@ function MainRightTopCard() {
         </p>
 
         <p>
-          Artwork Delivered <span>200</span>
+          Artwork Delivered <span>340</span>
         </p>
 
         <p>
-          Total Earning <span>262 MAD</span>
+          Total Earning <span>4700 MAD</span>
         </p>
       </div>
     </div>

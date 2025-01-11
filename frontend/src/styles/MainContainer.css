@@ -30,21 +30,22 @@
 }
 
 .maincontainer .left .banner .textContainer h1 {
-  font-size: 3.5rem;
+  font-size: 3.4rem;
   font-weight: 700;
-  color: #f1f1f1;
+  color: #11261c;
   margin: 5px 0;
 }
 
 .maincontainer .left .banner .textContainer h2 {
-  font-size: 2.5rem;
-  color: #b1147d;
+  font-size: 2.7rem;
+  color: #3a6c45;
   margin: 5px 0;
 }
 
 .maincontainer .left .banner .textContainer p {
   color: #f1f1f1;
   font-size: 18px;
+  font-weight: bold;
   margin: 5px 0;
 }
 
@@ -60,13 +61,13 @@
 
 .maincontainer .left .banner .textContainer .bid p span {
   display: block;
-  color: #b1147d;
+  color: #e00b0b;
 }
 
 .maincontainer .left .cards {
-  background: #19162c;
+  background: #54564e;
   padding: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
   border-radius: 10px;
 }
@@ -86,7 +87,7 @@
 .maincontainer .left .cards .filters .popular h2 {
   font-size: 20px;
   font-weight: 900;
-  color: #d1cfd4;
+  color: #e4e2e8;
   margin-right: 10px;
 }
 
@@ -103,7 +104,7 @@
 }
 
 .maincontainer .left .cards main .card_main {
-  background: #252041;
+  background: #253825;
   border-radius: 10px;
   overflow: hidden;
   max-width: 260px;
@@ -137,7 +138,7 @@
 }
 
 .maincontainer .left .cards main .card_main .card_main_name .card_main_icon i {
-  color: #b1147d;
+  color: #ff0202;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   font-size: 12px;
 }
@@ -162,18 +163,18 @@
   gap: 1em;
   padding: 5px 10px;
   text-align: center;
-  column-rule: 1px solid #adabb8;
+  column-rule: 1px solid #dad7eb;
   margin: 15px 0;
 }
 .maincontainer .left .cards main .card_main .stat p {
   font-size: 12px;
   font-weight: bold;
-  color: #adabb8;
+  color: #e0ddeb;
 }
 
 .maincontainer .left .cards main .card_main .stat p span {
   display: block;
-  color: #b1147d;
+  color: #bbe9bb;
 }
 
 .maincontainer .left .cards main .card_main .card_main_button {
@@ -196,7 +197,7 @@
 
 .maincontainer .right .topCard,
 .maincontainer .right .bottom_card {
-  background: #19162c;
+  background: #54564e;
   border-radius: 20px;
   padding: 10px 20px;
 }
@@ -214,12 +215,12 @@
 
 .maincontainer .right .topCard .topCard_name h2,
 .maincontainer .right .bottom_card .bottomCard_name h2 {
-  color: #d1d0d5;
+  color: #e9e9ec;
 }
 
 .maincontainer .right .topCard .topCard_name a,
 .maincontainer .right .bottom_card .bottomCard_name a {
-  color: #b1147d;
+  color: #d3ffc9;
 }
 
 .maincontainer .right .topCard .earning {
@@ -234,18 +235,18 @@
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: #adabb8;
+  color: #dcdaeb;
   font-weight: bold;
 }
 
 .maincontainer .right .topCard .earning p:nth-child(odd) {
-  background: #211d3a;
+  background: #243431;
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
 .maincontainer .right .topCard .earning p:last-child span {
-  color: #b1147d;
+  color: #bbe2a9;
 }
 
 .maincontainer .right .bottom_card {
@@ -261,7 +262,7 @@
 .maincontainer .right .bottom_card .topSeller .topSellerImg {
   width: 45px;
   height: 45px;
-  background: #252041;
+  background: #4d2ff8;
   border-radius: 50%;
   overflow: hidden;
 }
