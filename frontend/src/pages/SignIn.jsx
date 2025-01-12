@@ -26,11 +26,11 @@ const SignIn = () => {
       <form onSubmit={handleSignIn}>
         <h1>Login</h1>
         <div className="input_box">
-            <input type="email" placeholder="Email" required />
+            <input type="email" name="email" placeholder="Email" required />
             <FaUser className="icon"/>
         </div>
         <div className="input_box">
-            <input type="password" placeholder="Password" required />
+            <input type="password" name="password" placeholder="Password" required />
             <FaLock className="icon"/>
         </div>
         <div className="remember_forget">

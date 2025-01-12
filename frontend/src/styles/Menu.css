@@ -30,42 +30,51 @@ menu ul li {
   position: relative;
   width: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
-menu ul li a {
+menu ul li span {
   font-size: 24px;
   color: #d0edc7;
-  text-decoration: none;
   transition: all 0.3s;
 }
 
-menu ul li a::before {
+/* Active icon styles */
+menu ul li.active span {
+  color: #a2ff73; /* Active icon color */
+  background-color: #1c1c1c; /* Background for active icon */
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Hover effect for non-active icons */
+menu ul li span:hover {
+  color: #233124;
+}
+
+/* Additional hover and focus effects */
+menu ul li span::before {
   position: absolute;
   content: "";
   top: 5px;
   left: 5px;
-  width: 0px;
+  width: 0;
   height: 20px;
-  background: #b1147d;
+  background: #536851;
   border-radius: 50%;
-}
-
-menu ul li:hover a::before {
-  width: 20px;
   transition: all 0.3s;
 }
 
-menu ul li.active a::before {
+menu ul li:hover span::before {
   width: 20px;
-  transition: all 0.3s;
 }
 
-menu ul li.active a {
-  color: #b1147d;
+menu ul li:focus span::before {
+  width: 20px;
 }
 
-menu ul li:hover a {
-  color: #b1147d;
+menu ul li:focus {
+  background-color: #1c1c1c;
 }
 
 .lastMenu {

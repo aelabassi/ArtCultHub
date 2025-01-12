@@ -21,7 +21,7 @@ function TopContainer() {
   return (
     <div className="topContainer">
       <div className="inputBox">
-        <input type="text" placeholder="Search items, collections" />
+        <input type="text" name="search" placeholder="Search items, collections" />
         <i>
           <BiSearchAlt />
         </i>
