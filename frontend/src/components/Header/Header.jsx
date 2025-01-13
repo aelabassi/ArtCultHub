@@ -26,23 +26,26 @@ const NAV__LINKS = [
 
 const Header = () => {
   const headerRef = useRef(null);
-
   const menuRef = useRef(null);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("header__shrink");
-      } else {
-        headerRef.current.classList.remove("header__shrink");
-      }
-    });
+  // Define the scroll handler function
+  const handleScroll = () => {
+    if (
+      document.body.scrollTop > 80 ||
+      document.documentElement.scrollTop > 80
+    ) {
+      headerRef.current.classList.add("header__shrink");
+    } else {
+      headerRef.current.classList.remove("header__shrink");
+    }
+  };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup: remove event listener on component unmount
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -76,13 +79,19 @@ const Header = () => {
           <div className="nav__right d-flex align-items-center gap-5 ">
             <button className="btn d-flex gap-2 align-items-center">
               <span>
-                <i class="ri-wallet-line"></i>
+                <i className="ri-wallet-line"></i>
               </span>
               <Link to="/wallet">Connect Wallet</Link>
             </button>
+            <button className="btn d-flex gap-2 align-items-center">
+              <span>
+                <i className="ri-account-pin-circle-line"></i>
+              </span>
+              <Link to="/signin">Sign In/ Sign UP</Link>
+            </button>
 
             <span className="mobile__menu">
-              <i class="ri-menu-line" onClick={toggleMenu}></i>
+              <i className="ri-menu-line" onClick={toggleMenu}></i>
             </span>
           </div>
         </div>

@@ -15,7 +15,7 @@ const SellerSection = () => {
           </Col>
 
           {SELLER__DATA.map((item) => (
-            <Col lg="2" md="3" sm="4" xs="6" key={item.id} className="mb-4">
+            <Col lg="2" md="3" sm="4" xs="6" key={`${item.id}-${item.sellerName}`} className="mb-4">
               <div className="single__seller-card d-flex align-items-center gap-3">
                 <div className="seller__img">
                   <img src={item.sellerImg} alt="" className="w-100" />
@@ -28,6 +28,7 @@ const SellerSection = () => {
               </div>
             </Col>
           ))}
+
         </Row>
       </Container>
     </section>
