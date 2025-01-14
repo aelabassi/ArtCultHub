@@ -1,4 +1,4 @@
-import { query } from './db';
+import { query } from '../backend/src/db/index';
 
 async function testQuery() {
     try {

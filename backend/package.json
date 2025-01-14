@@ -4,7 +4,7 @@
   "description": "Backend for Art products and artirst, and users",
   "main": "index.js",
   "scripts": {
-    "test": "vitest",
+    "test": "ts-node",
     "dev": "NODE_ENV=development nodemon src/server.ts",
     "prod": "NODE_ENV=production nodemon src/server.ts",
     "migrate": "prisma migrate dev",

@@ -1,22 +1,24 @@
 import { MongoClient } from 'mongodb';
 import config from '../config';
 
-const client = new MongoClient(config.databaseUrl);
+const client = new MongoClient(config.databaseUrl,{ connectTimeoutMS: 5000 });
 
 // Connection function
 async function connect() {
     try {
         await client.connect();
-        console.log('Successfully connected to MongoDB database');
+        console.log('Successfully connected to MongoDB database', config.databaseUrl);
         return client;
     } catch (err) {
-        console.error('Error connecting to MongoDB:', err.stack);
+        console.error('Error executing query:', err);
+
         throw err;
     }
 }
 
 // Query wrapper function
-async function query(collection: string, queryType: string, params: any = {}) {
+async function query(collection: string, queryType: string, params: any = {}) 
+: Promise<any>{
     try {
         const db = client.db();
         const coll = db.collection(collection);
@@ -38,7 +40,7 @@ async function query(collection: string, queryType: string, params: any = {}) {
                 throw new Error(`Unknown query type: ${queryType}`);
         }
     } catch (err) {
-        console.error('Error executing query:', err.stack);
+        console.error('Error executing query:', err);
         throw err;
     }
 }
