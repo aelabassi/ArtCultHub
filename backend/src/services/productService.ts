@@ -1,9 +1,9 @@
 // src/services/productService.ts
 import prisma from '../utils/prisma';
-import { ProductInput } from '../types';
+import { Product } from '../@types';
 
 export class ProductService {
-  async createProduct(ownerId: number, data: ProductInput) {
+  async createProduct(ownerId: number, data: Product) {
     return prisma.product.create({
       data: {
         ...data,
@@ -59,7 +59,7 @@ export class ProductService {
     });
   }
 
-  async updateProduct(id: number, ownerId: number, data: Partial<ProductInput>) {
+  async updateProduct(id: number, ownerId: number, data: Partial<Product>) {
     return prisma.product.update({
       where: {
         id,
