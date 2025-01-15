@@ -20,24 +20,31 @@ export type Secret = {
     username: string
     password: string
     isAdmin: boolean
+    walletAddress: string
+    profileImage: string
+    totalEarnings: number
+    artworkSold: number
+    artworkCanceled: number
+    artworkPending: number
+    artworkDelivered: number
+    followers: Types.ObjectId
   }
   
-// Review
-export type Review = {
-    name: string
-    rating: number
-    comment: string
-  }
+
 // Product
 export type Product = {
-  user: User
-  name: string
-  description: string
-  price: number
-  imageUrl: string
-  category: string
-  rating: number
-  numReviews: number
-  reviews: Review[]
+  user: Types.ObjectId; 
+  name: string;
+  description: string;
+  price: number;
+  imageUrl: string;
+  category: 'Art' | 'Illustration' | 'Music' | 'Culture' | 'Dresses'; 
+  currentBid: number;
+  endingIn: Date;
+  likes: number;
+  status: 'active' | 'sold' | 'canceled' | 'pending' | 'delivered'; 
+  views: number;
+
+ 
 }
 
