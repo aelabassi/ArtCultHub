@@ -1,16 +1,16 @@
 // define the types of the environment variables that are used in the application.
 export type Secret = {
-    jwtSecret: string | undefined
-    jwtExpire: string | undefined
-    dbUrl: string | undefined
-  }
-  
-  export type envSecrets = {
-    stage: string
-    nodeEnv: string | undefined
-    port: number
-    secret: Secret
-  }
+  jwtSecret: string | undefined
+  jwtExpire: string | undefined
+  dbUrl: string | undefined
+}
+
+export type envSecrets = {
+  stage: string
+  nodeEnv: string | undefined
+  port: number
+  secret: Secret
+}
 
   // Models
   // User
