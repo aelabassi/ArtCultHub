@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import { UserModel } from '../models/user'
 import { signUpSchema, signInSchema } from '../middlewares/validate'
-import { UserModel } from '../models/user'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import config from '../config'
