@@ -1,12 +1,12 @@
-import { query } from './db';
+import { query } from './db'
 
 async function testQuery() {
-    try {
-        const result = await query('SELECT NOW()');
-        console.log('Test query result:', result);
-    } catch (error) {
-        console.error('Test query error:', error);
-    }
+  try {
+    const result = await query('SELECT NOW()')
+    console.log('Test query result:', result)
+  } catch (error) {
+    console.error('Test query error:', error)
+  }
 }
 
-testQuery();
+testQuery()
