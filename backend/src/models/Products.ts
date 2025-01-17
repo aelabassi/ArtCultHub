@@ -1,11 +1,14 @@
-import mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
+import { Product } from '../@types';
 
-const itemSchema = new mongoose.Schema({
+export const ProductModel = model<Product>(
+  'Product',
+  new Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
     price: { type: Number, required: true },
     minimumBid: { type: Number, required: true },
-    creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    creator: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     category: {
       type: String,
       enum: ['Art', 'Culture', 'Dresses', 'Virtual World', 'Trending Cards'],
@@ -20,4 +23,5 @@ const itemSchema = new mongoose.Schema({
       enum: ['active', 'sold', 'expired'],
       default: 'active'
     }
-  });
+  })
+);
