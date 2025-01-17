@@ -23,10 +23,16 @@ app.use(express.urlencoded({ extended: true }))
 // User route
 app.use('/api', UserRouter);
 
+
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello World')
+})
 async function server(){
   try{
     await mongoose.connect(MONGODB_URI);
-    app.listen(config.port)
+    app.listen((config.port), () =>{
+      console.log(`Server running on port http://localhost:${config.port}`);
+    })
     console.log(`MongoDB connected: ${colors.green('success')}`);
   }catch(error){
     console.log(config.secret.dbUrl);
