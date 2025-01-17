@@ -1,5 +1,6 @@
-import merge from 'lodash.merge'
-import { envSecrets, Secret } from '../@types'
+import merge from 'lodash.merge';
+import {envSecrets, Secret} from '../types/config';
+
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 const stage = process.env.STAGE || 'dev'
