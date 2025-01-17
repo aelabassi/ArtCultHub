@@ -10,6 +10,8 @@ import cors from 'cors'
 dotenv.config();
 colors.enable();
 
+const MONGODB_URI: string = config.secret.dbUrl as string;
+
 const app = express()
 
 // middlewares
@@ -23,11 +25,11 @@ app.use('/api', UserRouter);
 
 async function server(){
   try{
-    await mongoose.connect(process.env.MONOG_URL ?? '');
+    await mongoose.connect(MONGODB_URI);
     app.listen(config.port)
     console.log(`MongoDB connected: ${colors.green('success')}`);
   }catch(error){
-    console.log(process.env.MONGO_URL);
+    console.log(config.secret.dbUrl);
     console.log(`MongoDB connection: ${colors.red('failed')}`);
     process.exit(1);
   }
