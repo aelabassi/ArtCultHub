@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import { UserModel } from '../modules/user'
+import { UserModel } from '../models/user'
 import bcrypt from 'bcrypt'
 export const userProfile = async (
   req: Request,
