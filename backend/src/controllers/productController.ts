@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ProductModel } from '../models/Products';
+import { ProductModel } from '../models/product';
 import { StatisticsModel } from '../models/Statistics';
 //import {//something} from middleware
 

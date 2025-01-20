@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { BidModel } from '../models/Bid';
-import { ProductModel } from '../models/Products';
+import { ProductModel } from '../models/product';
 //import {//something} from middleware
 
 export const bidController = {
