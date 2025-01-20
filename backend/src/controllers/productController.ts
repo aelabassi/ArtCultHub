@@ -1,19 +1,25 @@
 import { Request, Response } from 'express';
 import { ProductModel } from '../models/product';
 import { StatisticsModel } from '../models/Statistics';
-//import {//something} from middleware
+
 
 export const productController = {
   createProduct: async (req: Request, res: Response) => {
     try {
       const { name, description, price, category, imageUrl } = req.body;
+
+      if (!req.user) {
+        return res.status(401).json({ message: 'Authentication required' });
+      }
+      const userId = req.user.id;
+
       const product = await ProductModel.create({
-        user: req.userId,
         name,
         description,
         price,
         category,
         imageUrl,
+        creator: userId,
         endingIn: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 7 days from now
       });
 

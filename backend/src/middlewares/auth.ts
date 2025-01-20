@@ -7,6 +7,16 @@ dotenv.config()
 const jwtSecret: string = config.secret.jwtSecret as string
 const jwtExpire: string = config.secret.jwtExpire as string
 
+declare global {
+  namespace Express {
+    interface Request {
+      user?: {
+        id: string;
+        isAdmin: boolean;
+      }
+    }
+  }
+}
 export const authMiddleware = (
   req: Request,
   res: Response,

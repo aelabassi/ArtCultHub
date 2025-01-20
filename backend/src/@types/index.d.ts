@@ -98,3 +98,12 @@ export type Bid = {
   status: 'active'| 'won' | 'lost'
 
 }
+
+//Statistics
+export type Statistics = {
+  totalArtworkSold: number;
+  totalArtworkCanceled: number;
+  totalArtworkPending: number;
+  totalArtworkDelivered: number;
+  totalEarnings: number;
+}

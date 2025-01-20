@@ -1,12 +1,18 @@
 import { Request, Response } from 'express';
 import { BidModel } from '../models/Bid';
 import { ProductModel } from '../models/product';
-//import {//something} from middleware
 
 export const bidController = {
   placeBid: async (req: Request, res: Response) => {
     try {
       const { productId, amount } = req.body;
+
+      if (!req.user) {
+        return res.status(401).json({ message: 'Authentication required' });
+      }
+      const userId = req.user.id;
+
+
       const product = await ProductModel.findById(productId);
 
       if (!product) {
@@ -19,7 +25,7 @@ export const bidController = {
 
       const bid = await BidModel.create({
         product: productId,
-        bidder: req.userId,
+        bidder: userId,
         amount
       });
 
