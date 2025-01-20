@@ -9,9 +9,9 @@
     "prod": "NODE_ENV=production nodemon src/server.ts",
     "build": "npm install",
     "start": "node dist/server.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
     "format": "prettier --write \"**/*.{html,css,js,ts,jsx,tsx}\"",
     "lint": "eslint . --ext .ts"
   },
