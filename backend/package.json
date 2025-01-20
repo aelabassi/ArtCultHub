@@ -70,6 +70,7 @@
     "@paypal/paypal-server-sdk": "^0.6.1",
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "^22.10.2",
+    "@types/nodemailer": "^6.4.17",
     "@types/paypal-rest-sdk": "^1.7.9",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
@@ -83,6 +84,7 @@
     "jsonwebtoken": "^9.0.2",
     "lodash.merge": "^4.6.2",
     "mongoose": "^8.9.3",
+    "nodemailer": "^6.9.16",
     "paypal-rest-sdk": "^1.8.1"
   }
 }
