@@ -1,5 +1,5 @@
 import merge from 'lodash.merge';
-import {envSecrets, Secret} from '../types/config';
+import {envSecrets, Secret} from '../@types';
 
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development' || "testing"
