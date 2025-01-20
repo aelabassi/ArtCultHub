@@ -23,6 +23,8 @@ export default merge<envSecrets, Secret>(
       jwtSecret: process.env.JWT_SECRET,
       jwtExpire: process.env.JWT_EXP,
       dbUrl: process.env.MONGO_URL,
+      paypalClientId: process.env.PAYPAL_CLIENT_ID,
+      paypalSecret: process.env.PAYPAL_CLIENT_SECRET,
     },
   },
   envConfig,

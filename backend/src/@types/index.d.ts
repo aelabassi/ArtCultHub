@@ -3,6 +3,8 @@ export type Secret = {
   jwtSecret: string | undefined
   jwtExpire: string | undefined
   dbUrl: string | undefined
+  paypalClientId: string | undefined
+  paypalSecret: string | undefined
 }
 
 export type envSecrets = {
@@ -97,4 +99,13 @@ export type Bid = {
   timestamp:  Date
   status: 'active'| 'won' | 'lost'
 
+}
+
+// payment
+export interface PaymentRequest {
+  price: number;
+  currency: string;
+  description: string;
+  returnUrl: string;
+  cancelUrl: string;
 }
