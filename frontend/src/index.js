@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "remixicon/fonts/remixicon.css";
 import reportWebVitals from "./reportWebVitals";
 
+
 ReactDOM.render(
   <AuthProvider>
     <App />
