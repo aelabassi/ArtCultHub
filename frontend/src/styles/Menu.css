@@ -1,0 +1,88 @@
+menu {
+  width: 100px;
+  height: 100%;
+  background: #413d2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+}
+
+menu img {
+  width: 3em;
+  padding-top: 30px;
+}
+
+menu ul {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+menu ul li {
+  list-style: none;
+  margin: 20px 0;
+  padding-top: 30px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+menu ul li span {
+  font-size: 24px;
+  color: #d0edc7;
+  transition: all 0.3s;
+}
+
+/* Active icon styles */
+menu ul li.active span {
+  color: #a2ff73; /* Active icon color */
+  background-color: #1c1c1c; /* Background for active icon */
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Hover effect for non-active icons */
+menu ul li span:hover {
+  color: #233124;
+}
+
+/* Additional hover and focus effects */
+menu ul li span::before {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 5px;
+  width: 0;
+  height: 20px;
+  background: #536851;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+menu ul li:hover span::before {
+  width: 20px;
+}
+
+menu ul li:focus span::before {
+  width: 20px;
+}
+
+menu ul li:focus {
+  background-color: #1c1c1c;
+}
+
+.lastMenu {
+  margin-top: auto;
+}
+
+@media only screen and (max-width: 525px) {
+  menu {
+    min-width: 68px;
+  }
+}
