@@ -7,6 +7,16 @@ dotenv.config()
 const jwtSecret: string = config.secret.jwtSecret as string
 const jwtExpire: string = config.secret.jwtExpire as string
 
+declare global {
+  namespace Express {
+    interface Request {
+      user?: {
+        id: string;
+        isAdmin: boolean;
+      }
+    }
+  }
+}
 export const authMiddleware = (
   req: Request,
   res: Response,
@@ -14,9 +24,9 @@ export const authMiddleware = (
 ) => {
   try {
     let token = ''
-    const authriazationHeader = req.headers.authorization
-    if (authriazationHeader && authriazationHeader.startsWith('Bearer')) {
-      token = authriazationHeader.split(' ')[1]
+    const authoriazationHeader = req.headers.authorization
+    if (authoriazationHeader && authoriazationHeader.startsWith('Bearer')) {
+      token = authoriazationHeader.split(' ')[1]
     }
     if (!token) {
       throw new Error('You\re not authorized to access this page')

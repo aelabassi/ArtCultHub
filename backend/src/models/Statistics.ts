@@ -1,12 +1,6 @@
 import { Schema, model } from 'mongoose';
+import { Statistics } from '../@types';
 
-interface Statistics {
-  totalArtworkSold: number;
-  totalArtworkCanceled: number;
-  totalArtworkPending: number;
-  totalArtworkDelivered: number;
-  totalEarnings: number;
-}
 
 export const StatisticsModel = model<Statistics>(
   'Statistics',
