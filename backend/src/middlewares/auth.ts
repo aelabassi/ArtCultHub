@@ -24,9 +24,9 @@ export const authMiddleware = (
 ) => {
   try {
     let token = ''
-    const authriazationHeader = req.headers.authorization
-    if (authriazationHeader && authriazationHeader.startsWith('Bearer')) {
-      token = authriazationHeader.split(' ')[1]
+    const authoriazationHeader = req.headers.authorization
+    if (authoriazationHeader && authoriazationHeader.startsWith('Bearer')) {
+      token = authoriazationHeader.split(' ')[1]
     }
     if (!token) {
       throw new Error('You\re not authorized to access this page')
