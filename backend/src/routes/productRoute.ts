@@ -4,7 +4,14 @@ import { authMiddleware} from '../middlewares/auth';
 
 const router = express.Router();
 
-router.post('/create', authMiddleware, productController.createProduct);
+
+router.post('/create', authMiddleware, async (req, res) => {
+    try {
+      await productController.createProduct(req, res);
+    } catch (error) {
+      res.status(500).json({ message: 'Error creating product', error });
+    }
+  });
 router.get('/', productController.getProducts);
 
 export default router;
