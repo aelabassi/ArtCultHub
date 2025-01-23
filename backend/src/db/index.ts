@@ -2,7 +2,6 @@ import { MongoClient } from 'mongodb';
 import config from '../config';
 
 const client = new MongoClient(config.secret.dbUrl!,{ connectTimeoutMS: 5000 });
-
 // Connection function
 async function connect() {
     try {
@@ -12,10 +11,7 @@ async function connect() {
     } catch (err) {
         console.error('Error executing query:', err);
 
-        throw err;
-    }
-}
-
+        throw err;}}
 // Query wrapper function
 async function query(collection: string, queryType: string, params: any = {}) 
 : Promise<any>{
@@ -41,10 +37,7 @@ async function query(collection: string, queryType: string, params: any = {})
         }
     } catch (err) {
         console.error('Error executing query:', err);
-        throw err;
-    }
-}
-
+        throw err;}}
 // Close connection
 async function close() {
     await client.close();

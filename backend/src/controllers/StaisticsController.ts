@@ -16,8 +16,7 @@ export class StatisticsController {
       return res.status(500).json({ message: 'Error fetching statistics', error });
     }
   }
-
-  // Update statistics
+// Update statistics
   async updateStatistics(req: Request, res: Response) {
     try {
       const updates: Partial<Statistics> = req.body;
