@@ -103,6 +103,7 @@ export type Bid = {
 
 // payment
 export interface PaymentRequest {
+  product: Types.ObjectId
   price: number;
   currency: string;
   description: string;

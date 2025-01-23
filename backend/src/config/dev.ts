@@ -7,5 +7,7 @@ export default {
     jwtSecret: process.env.JWT_SECRET,
     jwtExpire: process.env.JWT_EXP,
     dbUrl: process.env.MONGO_URL_DEV,
+    paypalClientId: process.env.paypalClientId,
+    paypalSecret: process.env.paypalSecret
   },
 }
