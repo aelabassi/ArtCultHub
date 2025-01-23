@@ -1,0 +1,2 @@
+# Create Procfile in project root
+web: npm run start
