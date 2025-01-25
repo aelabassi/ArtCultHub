@@ -9,7 +9,7 @@
     "prod": "NODE_ENV=production nodemon src/server.ts",
     "build": "npm install",
     "start": "NODE_ENV=production STAGE=prod tsnd src/server.ts",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i --prefix frontend && npm run build --prefix frontend",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i --prefix backend & npm run build --prefix backend",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
