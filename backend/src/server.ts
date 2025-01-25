@@ -36,8 +36,8 @@ app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World')
+app.get('/home', (req: Request, res: Response) => {
+  res.send('Welcome to ArtCultHub API 🫡')
 })
 async function server(){
   try{
