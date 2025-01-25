@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 export default {
-  port: 5000,
+  port: process.env.PORT,
   host: process.env.HOST,
   secret: {
     jwtSecret: process.env.JWT_SECRET,
