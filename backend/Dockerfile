@@ -1,5 +1,5 @@
 # backend/Dockerfile
-FROM node:16-alpine
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -8,8 +8,6 @@ EXPOSE 5000
 
 COPY . .
 
-RUN npm i
-RUN npm i --prefix frontend
 RUN npm run build
 
 # Start the application
