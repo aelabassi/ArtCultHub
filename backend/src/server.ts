@@ -45,9 +45,9 @@ async function server(){
     app.listen((config.port), () =>{
       console.log(`Server running on port http://localhost:${config.port}`);
     })
+    console.log(config.secret.dbUrl);
     console.log(`MongoDB connected: ${colors.green('success')}`);
   }catch(error){
-    console.log(config.secret.dbUrl);
     console.log(`MongoDB connection: ${colors.red('failed')}`);
     process.exit(1);
   }
