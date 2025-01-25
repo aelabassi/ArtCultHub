@@ -73,6 +73,7 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "lodash.merge": "^4.6.2",
-    "mongoose": "^8.9.3"
+    "mongoose": "^8.9.3",
+    "ts-node-dev": "^2.0.0"
   }
 }
