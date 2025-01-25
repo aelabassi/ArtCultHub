@@ -19,6 +19,7 @@ export default merge<envSecrets, Secret>(
     stage,
     nodeEnv: process.env.NODE_ENV,
     port: 3000,
+    host: 'http://localhost',
     secret: {
       jwtSecret: process.env.JWT_SECRET,
       jwtExpire: process.env.JWT_EXP,
