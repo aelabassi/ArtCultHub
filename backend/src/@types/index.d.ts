@@ -2,6 +2,7 @@
 export type Secret = {
   jwtSecret: string | undefined
   jwtExpire: string | undefined
+  cookieKey: string | undefined
   dbUrl: string | undefined
 }
 
