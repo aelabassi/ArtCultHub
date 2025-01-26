@@ -1,4 +1,4 @@
-import { cloudinaryConfig }   from "../config/cloudinary";
+import cloudinaryConfig   from "../config/cloudinaryConfig";
 import { Request, Response } from 'express';
 import { CloudinaryStorage } from "multer-storage-cloudinary/lib";
 import multer from 'multer';

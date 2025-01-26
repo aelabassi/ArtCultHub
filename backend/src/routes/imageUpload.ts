@@ -1,5 +1,6 @@
 import { Router, Request, Response} from 'express';
 import { uplaodImageMiddleware } from '../middlewares/imageUplaoder';
+import { error } from 'console';
 
 const router = Router();
 
@@ -12,10 +13,10 @@ const products = uplaodImageMiddleware('products');
  * @access admin and signed users (profile image)
  * 
  */
-router.post('/upload/profile', profiles.single('image'), (req: Request, res: Response) => {
-    if(req.file){
-        res.status(201).json({
-            imageUrl: req.file.path
+router.post('/profile', profiles.single('profileImage'), (req: Request, res: Response) => {
+    if(!req.file){
+        res.status(400).json({
+            error: 'No file uploaded'
         })
     }
 
@@ -29,7 +30,7 @@ router.post('/upload/profile', profiles.single('image'), (req: Request, res: Res
  * @access admin and signed users (product image)
  * 
  */
-router.post('/upload/product', products.single('image'), (req: Request, res: Response) => {
+router.post('/product', products.single('file'), (req: Request, res: Response) => {
     if(req.file){
         res.status(201).json({
             imageUrl: req.file.path

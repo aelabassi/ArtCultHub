@@ -32,6 +32,7 @@ app.use('/api/products', ProductRouter);
 app.use('/api/bids', BidRouter);
 app.use('/api/statistics', StatisticsRouter);
 app.use('/api/upload', imageUploadRouter);
+app.use('/api/upload', imageUploadRouter);
 
 // Error handling middlewares
 app.use(notFoundMiddleware);
