@@ -23,6 +23,7 @@ export default merge<envSecrets, Secret>(
     secret: {
       jwtSecret: process.env.JWT_SECRET,
       jwtExpire: process.env.JWT_EXP,
+      cookieKey: process.env.COOKIE_KEY,
       dbUrl: process.env.MONGO_URL,
     },
   },

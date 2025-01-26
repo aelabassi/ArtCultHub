@@ -1,4 +1,6 @@
 import express, { Response, Request, RequestHandler } from 'express'
+import session from 'express-session';
+import passport from 'passport';
 import config from './config'
 import morgan from 'morgan'
 import mongoose from 'mongoose';
@@ -25,6 +27,18 @@ app.use(morgan(`${colors.yellow(config.stage)}`))
 app.use(cors())
 app.use(express.json() as RequestHandler)
 app.use(express.urlencoded({ extended: true }))
+app.use(session({
+  secret: [config.secret.cookieKey ?? ''],
+  resave: false,
+  saveUninitialized: true,
+  cookie: { 
+    secure: config.stage === 'production',
+    maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
+  }
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Routes
 app.use('/api', UserRouter);
@@ -38,6 +52,12 @@ app.use('/api/upload', imageUploadRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
+passport.serializeUser((user, done) => {
+  done(null, user)
+})
+passport.deserializeUser((user: any, done) => {
+  done(null, user)
+})
 
 app.get('/home', (req: Request, res: Response) => {
   res.send('Welcome to ArtCultHub API 🫡')

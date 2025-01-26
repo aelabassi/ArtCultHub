@@ -10,6 +10,25 @@
         <input type="file" name="profileImage" accept="image/*" />
         <button type="submit">Upload Product</button>
       </form>
-    
+    <form action="http://localhost:5000/api/signup" method="POST">
+        <p>Sign up</p>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <label for="admin">Admin</label>
+        <input type="checkbox" name="admin" id="admin">
+        <button type="submit">Submit</button>
+    </form>
+    <form action="http://localhost:5000/api/signin" method="POST">
+        <p>Sign in</p>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+        <label for="password">Password</label>
+        <input type="text" name="password" id="password">
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
