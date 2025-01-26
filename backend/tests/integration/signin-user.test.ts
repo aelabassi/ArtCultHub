@@ -2,7 +2,7 @@ import {test, vi, expect, describe }  from 'vitest'
 import { Response, Request }  from 'express';
 import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
-import UserRouter from '../../src/route/user';
+import UserRouter from '../../src/routes/user';
 
 
 const servr = setupServer(

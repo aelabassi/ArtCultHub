@@ -59,7 +59,7 @@ passport.deserializeUser((user: any, done) => {
   done(null, user)
 })
 
-app.get('/home', (req: Request, res: Response) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to ArtCultHub API 🫡')
 })
 async function server(){
