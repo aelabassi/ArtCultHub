@@ -1,0 +1,185 @@
+openapi: 3.0.0
+info:
+  title: User and Product, and Bid API
+  version: 1.0.0
+  description: API for user authentication and product management, and bidding on artifiacts
+
+servers:
+  - url: http://localhost:5000/api
+    description: Local development server
+  - url: https://artculthub-1287c0654e00.herokuapp.com/api
+    description: Production server
+
+paths:
+  /signup:
+    post:
+      summary: User Registration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - username
+                - email
+                - password
+      responses:
+        '201':
+          description: User created successfully
+        '400':
+          description: Invalid input
+
+  /signin:
+    post:
+      summary: User Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - email
+                - password
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+        '401':
+          description: Authentication failed
+
+  /profile:
+    get:
+      summary: Get User Profile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Profile retrieved successfully
+    put:
+      summary: Update User Profile
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                isAmin:
+                  type: boolean
+      responses:
+        '200':
+          description: Profile updated successfully
+
+  /products:
+    post:
+      summary: Create Product
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+                description:
+                  type: string
+                image:
+                  type: string
+                  format: binary
+              required:
+                - name
+                - price
+      responses:
+        '201':
+          description: Product created successfully
+
+    put:
+      summary: Update Product
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                price:
+                  type: number
+                description:
+                  type: string
+                image:
+                  type: string
+                  format: binary
+              required:
+                - id
+      responses:
+        '200':
+          description: Product updated successfully
+
+  /bid:
+    post:
+      summary: Place Bid
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: string
+                amount:
+                  type: number
+              required:
+                - productId
+                - amount
+      responses:
+        '201':
+          description: Bid placed successfully
+
+    get:
+      summary: Get Bids
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Bids retrieved successfully
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

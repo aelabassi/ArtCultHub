@@ -1,0 +1,17 @@
+# Default owner for everything
+*                       @aelabassi
+# React
+/frontend/              @Lelaabk @blackpearlRZ
+/frontend/**/**.jsx     @Lelaabk @blackpearlRZ
+/frontend/**/**.tsx     @Lelaabk @blackpearlRZ
+*.tsx                   @Lelaabk @blackpearlRZ
+*.jsx                   @Lelaabk @blackpearlRZ
+# Common
+*.js                    @Lelaabk @blackpearlRZ @aelabassi @nancie6695
+*.ts                    @aelabassi @nancie6695
+
+# Backend
+/backend/               @aelabassi @nancie6695
+/backend/**/**.ts       @aelabassi @nancie6695
+/backend/**/**.js       @aelabassi @nancie6695
+*.ts                    @aelabassi @nancie6695

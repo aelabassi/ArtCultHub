@@ -1,8 +1,8 @@
 import merge from 'lodash.merge';
-import {envSecrets, Secret} from '../types/config';
+import {envSecrets, Secret} from '../@types';
 
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+process.env.NODE_ENV = process.env.NODE_ENV || 'development' || "testing"
 const stage = process.env.STAGE || 'dev'
 let envConfig
 
@@ -19,6 +19,7 @@ export default merge<envSecrets, Secret>(
     stage,
     nodeEnv: process.env.NODE_ENV,
     port: 3000,
+    host: 'http://localhost',
     secret: {
       jwtSecret: process.env.JWT_SECRET,
       jwtExpire: process.env.JWT_EXP,
