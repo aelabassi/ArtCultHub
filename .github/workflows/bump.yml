@@ -36,7 +36,7 @@ jobs:
         with:
           doc: aelabassapi
           token: ${{secrets.BUMP_API_TOKEN}}
-          file: doc/api-documentation.yml
+          file: docs/api-documentation.yml
           command: diff
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
