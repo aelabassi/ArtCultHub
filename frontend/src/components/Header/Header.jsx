@@ -106,16 +106,13 @@ const Header = () => {
           </div>
 
           <div className="nav__right d-flex align-items-center gap-5">
-            <button
-              className="btn d-flex gap-2 align-items-center"
-              onClick={() => navigate("/wallet")} style={{color : "white"}}
-            >
+          <button className="btn d-flex gap-2 align-items-center">
               <span>
                 <i className="ri-wallet-line"></i>
               </span>
-              {walletAddress
+              <NavLink to="/wallet">{walletAddress
                 ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`
-                : "Connect Wallet"}
+                : "Connect Wallet"}</NavLink>
             </button>
             <button className="btn d-flex gap-2 align-items-center">
               <span>
