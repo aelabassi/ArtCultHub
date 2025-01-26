@@ -34,12 +34,12 @@ router.post('/create-payment', (req: Request, res: Response) => {
         }]
       };
   
-      paypal.payment.create(create_payment_json, (error, payment) => {
+      paypal.payment.create(create_payment_json, (error: any, payment: any) => {
         if (error) {
           throw error;
         } else {
           const links = payment.links;
-          const approvalUrl = links?.find(link => link.rel === 'approval_url');
+          const approvalUrl = links?.find((link: any) => link.rel === 'approval_url');
           
           if (approvalUrl) {
             res.json({ approval_url: approvalUrl.href });
@@ -62,7 +62,7 @@ router.post('/create-payment', (req: Request, res: Response) => {
       payer_id: payerId
     };
   
-    paypal.payment.execute(paymentId, execute_payment_json, (error, payment) => {
+    paypal.payment.execute(paymentId, execute_payment_json, (error: any, payment: any) => {
       if (error) {
         console.error('Payment execution error:', error);
         res.status(500).json({ error: 'Failed to execute payment' });
