@@ -27,6 +27,7 @@ jobs:
           hub: aelabassapi
           token: ${{secrets.BUMP_API_TOKEN}}
           file: doc/api-documentation.yml
+          command: deploy --auto-create
   api-diff:
     if: ${{ github.event_name == 'pull_request' }}
     name: Check API diff on Bump.sh
