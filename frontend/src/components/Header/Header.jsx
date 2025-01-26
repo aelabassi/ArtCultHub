@@ -82,7 +82,7 @@ const Header = () => {
 
   return (
     <header className="header" ref={headerRef}>
-      <Container>
+      <Container style={{paddingTop : "0" , marginTop : "0"}}>
         <div className="navigation">
           <div className="logo">
             <img src={logo} alt="ArtCultHub Logo" className="logo__image" />
@@ -108,7 +108,7 @@ const Header = () => {
           <div className="nav__right d-flex align-items-center gap-5">
             <button
               className="btn d-flex gap-2 align-items-center"
-              onClick={() => navigate("/wallet")}
+              onClick={() => navigate("/wallet")} style={{color : "white"}}
             >
               <span>
                 <i className="ri-wallet-line"></i>
