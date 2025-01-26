@@ -6,6 +6,7 @@ import UserRouter from './routes/user';
 import ProductRouter from './routes/productRoute';
 import BidRouter from './routes/bidRoutes';
 import StatisticsRouter from './routes/statisticsRoutes';
+import imageUploadRouter from './routes/imageUpload';
 import * as dotenv from 'dotenv';
 import colors from 'colors';
 import cors from 'cors'
@@ -20,7 +21,7 @@ const MONGODB_URI: string = config.secret.dbUrl as string;
 const app = express()
 
 // middlewares
-app.use(morgan('dev'))
+app.use(morgan(`${colors.yellow(config.stage)}`))
 app.use(cors())
 app.use(express.json() as RequestHandler)
 app.use(express.urlencoded({ extended: true }))
@@ -30,6 +31,8 @@ app.use('/api', UserRouter);
 app.use('/api/products', ProductRouter);
 app.use('/api/bids', BidRouter);
 app.use('/api/statistics', StatisticsRouter);
+app.use('/api/upload', imageUploadRouter);
+app.use('/api/upload', imageUploadRouter);
 
 // Error handling middlewares
 app.use(notFoundMiddleware);
