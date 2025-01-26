@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test secret
-        run: echo ${{secrets.BUMP_API_TOKEN}}
+        run: echo ${{secrets.BUMP_API_TOKEN}} > secret.txt
       - name: Checkout
         uses: actions/checkout@v3
       - name: Deploy API documentation
