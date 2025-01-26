@@ -20,7 +20,7 @@ const MONGODB_URI: string = config.secret.dbUrl as string;
 const app = express()
 
 // middlewares
-app.use(morgan('dev'))
+app.use(morgan(`${colors.yellow(config.stage)}`))
 app.use(cors())
 app.use(express.json() as RequestHandler)
 app.use(express.urlencoded({ extended: true }))
