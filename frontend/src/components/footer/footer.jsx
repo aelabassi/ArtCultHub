@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import "./Footer.css";
+import "./footer.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
@@ -146,7 +146,7 @@ const Footer = () => {
           <Col lg="12" className=" mt-4 text-center">
             <p className="copyright">
               {" "}
-              Copyrights 2025, Developed by Layla ABKARI, Chaimae AAfif, Abderrazaq ABASSI.
+              Copyrights 2025, Developed by Layla ABKARI, Chaimae AAFIF, Abderrazaq ABASSI, Nancy KIBARA.
               All Rights Reserved.{" "}
             </p>
           </Col>

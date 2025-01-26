@@ -82,7 +82,7 @@ const Header = () => {
 
   return (
     <header className="header" ref={headerRef}>
-      <Container>
+      <Container style={{paddingTop : "0" , marginTop : "0"}}>
         <div className="navigation">
           <div className="logo">
             <img src={logo} alt="ArtCultHub Logo" className="logo__image" />
@@ -106,16 +106,13 @@ const Header = () => {
           </div>
 
           <div className="nav__right d-flex align-items-center gap-5">
-            <button
-              className="btn d-flex gap-2 align-items-center"
-              onClick={() => navigate("/wallet")}
-            >
+          <button className="btn d-flex gap-2 align-items-center">
               <span>
                 <i className="ri-wallet-line"></i>
               </span>
-              {walletAddress
+              <NavLink to="/wallet">{walletAddress
                 ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`
-                : "Connect Wallet"}
+                : "Connect Wallet"}</NavLink>
             </button>
             <button className="btn d-flex gap-2 align-items-center">
               <span>

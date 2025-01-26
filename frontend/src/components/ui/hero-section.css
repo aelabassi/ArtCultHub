@@ -1,7 +1,6 @@
 .hero__section {
   margin-top: 120px;
 }
-
 .hero__content h2 {
   color: #CBA35C;
   line-height: 55px;
@@ -52,6 +51,8 @@
 .hero__img {
   width: 370px;
   margin-left: 100px;
+  position: relative;
+  bottom: 48px;
 }
 
 .hero__img img {
