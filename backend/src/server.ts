@@ -2,10 +2,11 @@ import express, { Response, Request, RequestHandler } from 'express'
 import config from './config'
 import morgan from 'morgan'
 import mongoose from 'mongoose';
-import UserRouter from './route/user';
-import ProductRouter from './route/productRoute';
-import BidRouter from './route/bidRoutes';
-import StatisticsRouter from './route/statisticsRoutes';
+import UserRouter from './routes/user';
+import ProductRouter from './routes/productRoute';
+import BidRouter from './routes/bidRoutes';
+import StatisticsRouter from './routes/statisticsRoutes';
+import imageUploadRouter from './routes/imageUpload';
 import * as dotenv from 'dotenv';
 import colors from 'colors';
 import cors from 'cors'
@@ -30,6 +31,7 @@ app.use('/api', UserRouter);
 app.use('/api/products', ProductRouter);
 app.use('/api/bids', BidRouter);
 app.use('/api/statistics', StatisticsRouter);
+app.use('/api/upload', imageUploadRouter);
 
 // Error handling middlewares
 app.use(notFoundMiddleware);
