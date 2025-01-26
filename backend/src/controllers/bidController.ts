@@ -10,7 +10,7 @@ export const bidController = {
       if (!req.user) {
         return res.status(401).json({ message: 'Authentication required' });
       }
-      const userId = req.user.id;
+      const userId = (req.user as any).id;
 
 
       const product = await ProductModel.findById(productId);

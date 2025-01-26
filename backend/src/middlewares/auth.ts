@@ -31,7 +31,7 @@ export const authMiddleware = (
     }
     if (req.isAuthenticated()){
       req.user = req.user as User
-      req.session!.jwt = token
+      req.session!.id = token
       return next()
     }
     const decoded = jwt.verify(token, jwtSecret)

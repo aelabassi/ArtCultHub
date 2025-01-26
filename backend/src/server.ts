@@ -1,5 +1,5 @@
 import express, { Response, Request, RequestHandler } from 'express'
-import cookieSession from 'cookie-session';
+import session from 'express-session';
 import passport from 'passport';
 import config from './config'
 import morgan from 'morgan'
@@ -27,13 +27,16 @@ app.use(morgan(`${colors.yellow(config.stage)}`))
 app.use(cors())
 app.use(express.json() as RequestHandler)
 app.use(express.urlencoded({ extended: true }))
-app.use(cookieSession({
-  name: 'session',
-  keys: [config.secret.cookieKey ?? ''],
-  maxAge: 24 * 60 * 60 * 1000, // 24 hours
-  secure: config.nodeEnv === 'production' ? true : false,
-  httpOnly: true,
+app.use(session({
+  secret: [config.secret.cookieKey ?? ''],
+  resave: false,
+  saveUninitialized: true,
+  cookie: { 
+    secure: config.stage === 'production',
+    maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
+  }
 }))
+
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -49,6 +52,12 @@ app.use('/api/upload', imageUploadRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
+passport.serializeUser((user, done) => {
+  done(null, user)
+})
+passport.deserializeUser((user: any, done) => {
+  done(null, user)
+})
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World')
