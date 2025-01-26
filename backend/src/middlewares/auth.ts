@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
+import { User } from '../@types'
 import config from '../config'
 import jwt from 'jsonwebtoken'
 import * as dotenv from 'dotenv'
@@ -10,10 +11,7 @@ const jwtExpire: string = config.secret.jwtExpire as string
 declare global {
   namespace Express {
     interface Request {
-      user?: {
-        id: string;
-        isAdmin: boolean;
-      }
+      user?: User
     }
   }
 }
@@ -30,6 +28,11 @@ export const authMiddleware = (
     }
     if (!token) {
       throw new Error('You\re not authorized to access this page')
+    }
+    if (req.isAuthenticated()){
+      req.user = req.user as User
+      req.session!.jwt = token
+      return next()
     }
     const decoded = jwt.verify(token, jwtSecret)
     req.body.id = typeof decoded === 'string' ? decoded : decoded.id

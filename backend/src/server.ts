@@ -1,4 +1,6 @@
 import express, { Response, Request, RequestHandler } from 'express'
+import cookieSession from 'cookie-session';
+import passport from 'passport';
 import config from './config'
 import morgan from 'morgan'
 import mongoose from 'mongoose';
@@ -25,6 +27,15 @@ app.use(morgan(`${colors.yellow(config.stage)}`))
 app.use(cors())
 app.use(express.json() as RequestHandler)
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieSession({
+  name: 'session',
+  keys: [config.secret.cookieKey ?? ''],
+  maxAge: 24 * 60 * 60 * 1000, // 24 hours
+  secure: config.nodeEnv === 'production' ? true : false,
+  httpOnly: true,
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Routes
 app.use('/api', UserRouter);
