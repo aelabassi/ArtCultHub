@@ -177,6 +177,46 @@ paths:
         '200':
           description: Bids retrieved successfully
 
+  /upload/profile:
+    post:
+      summary: Upload Profile Picture to cloudinary
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+              required:
+                - image
+      responses:
+        '200':
+          description: Profile picture uploaded successfully
+
+  /upload/products:
+    post:
+      summary: Upload Product Image to cloudinary
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+              required:
+                - image
+      responses:
+        '200':
+          description: Product image uploaded successfully
+
 components:
   securitySchemes:
     bearerAuth:
