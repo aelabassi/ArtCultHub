@@ -8,6 +8,16 @@
 
 ---
 
+## **Live Demo**
+- [Deployed on Vercel](https://art-cult-hub.vercel.app/home)
+
+---
+
+## **API Documentation**
+- [ArtCultHub API Docs](https://bump.sh/aelabassapi/doc/artculthubapi)
+
+---
+
 ## **Features**
 
 - **Frontend:** Developed with React.js for a dynamic and responsive user interface.
@@ -23,9 +33,11 @@
 
 ## Technologies
 ### **Frontend**
+- HTML5
+- CSS3
+- Javascript
 - React
 - Redux
-- Vite (for a modern development experience)
 
 ### **Backend**
 - Node.js
@@ -81,7 +93,7 @@
 1. Start the frontend:
    ```bash
    cd frontend
-   npm run dev
+   npm start
    ```
 
 2. Start the backend:
@@ -94,9 +106,19 @@
 
 ## **Branching Strategy**
 
-- **Branches**:  
-  - `artFrontend`: For all frontend development.  
-  - `artBackend`: For all backend development.  
+- **Frontend Branches:**
+  - `feature/dashboard`: For dashboard development.
+  - `gh-pages`: For deployment-related branches.
+  - `artFrontend`: For all frontend development. 
+
+- **Backend Branches:**
+  - `artBackup`: For backup-related work.
+  - `db/mongodb`: For MongoDB-related changes.
+  - `feature/auth`: For user authentication features.
+  - `feature/paypal_pay`: For integrating PayPal payment functionality.
+  - `tests/aelabassi/auth`: For authentication-related tests.
+  - `artBackend`: For all backend development. 
+
 - Team members must create features or bug fixes on separate branches based on the main frontend or backend branches.
 - Use Pull Requests (PRs) for merging changes into the main branch.
 
