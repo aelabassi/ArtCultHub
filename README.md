@@ -43,8 +43,7 @@
 - Node.js
 - TypeScript
 - MongoDB
-- Redis
-- Prisma (ORM)
+- Mongoose (ORM)
 
 ### **Other Tools:**
 - **Visual Studio** for collaborative coding.
