@@ -8,7 +8,7 @@ import Contact from "../pages/Contact";
 import Wallet from "../pages/Wallet";
 import SignIn from "../pages/SignIn";
 import Header from "../components/Header/Header";
-import Footer from "../components/footer/Footer";
+import Footer from "../components/footer/footer";
 import "../App.css";
 
 const PublicRoutes = () => {
