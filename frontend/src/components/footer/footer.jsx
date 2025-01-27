@@ -146,7 +146,7 @@ const Footer = () => {
           <Col lg="12" className=" mt-4 text-center">
             <p className="copyright">
               {" "}
-              Copyrights 2025, Developed by Layla ABKARI, Chaimae AAFIF, Abderrazaq ABASSI, Nancy KIBARA.
+              Copyrights 2025, Developed by Layla ABKARI, Chaimae AAFIF, Abderrazaq EL Abassi, Nancy KIBARA.
               All Rights Reserved.{" "}
             </p>
           </Col>
