@@ -51,7 +51,7 @@
 - **Discord & WhatsApp** for communication and planning.
 - **Git and GitHub** for version control.
 - **Figma** for prototyping and mockups.
-- **Trello** for project management.
+- **[Trello](https://trello.com/invite/b/675dde7e52ce2e36d4d2828e/ATTI35269f08da0837b3b660704362c0d015037307F2/artculthub)** for project management.
 
 ---
 
