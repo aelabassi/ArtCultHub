@@ -43,7 +43,7 @@ app.use(passport.session())
 
 // Routes
 app.get('/', (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, 'build' , 'index.html'))
+  res.sendFile(path.join(__dirname, 'static' , 'index.html'))
 })
 app.use('/api', UserRouter);
 app.use('/api/products', ProductRouter);
