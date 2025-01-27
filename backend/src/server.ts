@@ -1,6 +1,7 @@
 import express, { Response, Request, RequestHandler } from 'express'
 import session from 'express-session';
 import passport from 'passport';
+import path from 'path';
 import config from './config'
 import morgan from 'morgan'
 import mongoose from 'mongoose';
@@ -41,6 +42,9 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 // Routes
+app.get('/', (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, 'build' , 'index.html'))
+})
 app.use('/api', UserRouter);
 app.use('/api/products', ProductRouter);
 app.use('/api/bids', BidRouter);
@@ -59,9 +63,6 @@ passport.deserializeUser((user: any, done) => {
   done(null, user)
 })
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome to ArtCultHub API 🫡')
-})
 async function server(){
   try{
     await mongoose.connect(MONGODB_URI);
