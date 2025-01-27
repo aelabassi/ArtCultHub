@@ -2,12 +2,17 @@ name: Vercel Production Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
-  push:
-    branches:
-      - main
+  pull_request:              # First condition - must be a pull request
+    types:                   # You can specify which PR actions trigger it
+      - opened              # When PR is first created
+      - synchronize         # When new commits are pushed to PR
+    branches:               
+      - main               # Only for PRs targeting main branch
 jobs:
   Deploy-Production:
+    if: ${{ github.event_name == 'pull_request' && github.base_ref == 'main' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
