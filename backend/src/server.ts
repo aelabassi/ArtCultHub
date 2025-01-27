@@ -21,7 +21,7 @@ colors.enable();
 
 const MONGODB_URI: string = config.secret.dbUrl as string;
 
-const app = express()
+export const app = express()
 
 // middlewares
 app.use(morgan(`${colors.yellow(config.stage)}`))

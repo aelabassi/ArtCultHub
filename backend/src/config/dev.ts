@@ -3,6 +3,7 @@ dotenv.config()
 
 export default {
   port: 5000,
+  host: 'http://localhost',
   secret: {
     jwtSecret: process.env.JWT_SECRET,
     jwtExpire: process.env.JWT_EXP,
