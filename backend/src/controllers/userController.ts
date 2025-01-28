@@ -28,7 +28,7 @@ export const signUp = async (
     }).save()
     if (user) {
       res.status(201).json({
-        token: jwt.sign({ id: user.id }, config.secret.jwtSecret as string),
+        token: jwt.sign({ id: user.id }, config.secret!.jwtSecret as string),
         id: user.id,
         username: username,
         email: email,
@@ -60,7 +60,7 @@ export const signIn = async (
     }
     const { id, username, isAdmin } = user
     res.json({
-      token: jwt.sign({ id }, config.secret.jwtSecret as string),
+      token: jwt.sign({ id }, config.secret!.jwtSecret as string),
       id,
       username,
       email,

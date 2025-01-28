@@ -18,17 +18,17 @@ import { notFoundMiddleware, errorHandlerMiddleware } from './middlewares/errorH
 dotenv.config();
 colors.enable();
 
-const MONGODB_URI: string = config.secret.dbUrl as string;
+const MONGODB_URI: string = config.secret!.dbUrl as string;
 
 export const app = express()
 
 // middlewares
-app.use(morgan(`${colors.yellow(config.stage)}`))
+app.use(morgan(`${colors.yellow(config.stage!)}`))
 app.use(cors())
 app.use(express.json() as RequestHandler)
 app.use(express.urlencoded({ extended: true }))
 app.use(session({
-  secret: [config.secret.cookieKey ?? ''],
+  secret: [config.secret!.cookieKey ?? ''],
   resave: false,
   saveUninitialized: true,
   cookie: { 
