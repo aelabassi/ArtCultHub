@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - main
-    # Filter commits containing the word "testing" in the commit message
-    paths-ignore:
-      - '**/*'
+      - test
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
 
 jobs:
   test-backend:
