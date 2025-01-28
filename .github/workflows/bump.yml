@@ -12,7 +12,7 @@ on:
       - main
 jobs:
   deploy-doc:
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event.head_commit.message && contains(github.event.head_commit.message, 'apidocs')}}
     name: Deploy API documentation on Bump.sh
     runs-on: ubuntu-latest
     steps:
