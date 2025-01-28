@@ -32,12 +32,9 @@ export const productController = {
 
   getProducts: async (req: Request, res: Response) => {
     try {
-      const { category, sort } = req.query;
+      const { sort } = req.query;
 
-      let query = {};
-      if (category) {
-        query = { category };
-      }
+      const userId = req.user;
 
       let sortOption = {};
       if (sort === 'price') {
@@ -46,7 +43,7 @@ export const productController = {
         sortOption = { createdAt: -1 };
       }
 
-      const products = await ProductModel.find(query).sort(sortOption);
+      const products = await ProductModel.find({ user: userId }).sort(sortOption);
       res.json(products);
     } catch (error) {
       console.error(error);

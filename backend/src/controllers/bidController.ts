@@ -40,8 +40,8 @@ export const bidController = {
 
   getBidHistory: async (req: Request, res: Response) => {
     try {
-      const { productId } = req.params;
-      const bids = await BidModel.find({ product: productId })
+      const { userId } = req.params;
+      const bids = await BidModel.find({ bidder: userId })
         .populate('bidder', 'username')
         .sort({ amount: -1 });
 
