@@ -16,7 +16,7 @@ export const signUp = async (
       throw error
     }
     const { username, email, password } = req.body
-    console.log(req.body)
+    console.log("sign up route hit");
     if (await UserModel.findOne({ email })) {
       throw new Error('User already exists')
     }

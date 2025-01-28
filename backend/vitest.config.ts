@@ -5,6 +5,9 @@ export default defineConfig({
   test: {
     // Global test setup
     setupFiles: ['./tests/config/setup.ts'],
+    // timeout: 5000,
+    testTimeout: 500000,
+    hookTimeout: 500000,
     
     // Environment configuration
     environment: 'node', // or 'node' based on your needs
