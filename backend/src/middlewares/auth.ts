@@ -5,8 +5,8 @@ import jwt from 'jsonwebtoken'
 import * as dotenv from 'dotenv'
 dotenv.config()
 
-const jwtSecret: string = config.secret.jwtSecret as string
-const jwtExpire: string = config.secret.jwtExpire as string
+const jwtSecret: string = config.secret!.jwtSecret as string
+const jwtExpire: string = config.secret!.jwtExpire as string
 
 declare global {
   namespace Express {
