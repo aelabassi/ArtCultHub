@@ -9,7 +9,7 @@ export type Secret = {
 export type envSecrets = {
   stage: string
   nodeEnv: string | undefined
-  port: number
+  port: string
   host: string
   secret: Secret
 }
