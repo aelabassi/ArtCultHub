@@ -95,6 +95,7 @@ paths:
 
   /products:
     post:
+    /create:
       summary: Create Product
       security:
         - bearerAuth: []
@@ -106,11 +107,14 @@ paths:
               properties:
                 name:
                   type: string
-                price:
-                  type: number
                 description:
                   type: string
-                image:
+                price:
+                  type: number
+                category:
+                  type: string
+                  enum: ['Art', 'Illustration', 'Music', 'Culture', 'Dresses Indians', 'Silk Threads', 'Dishes Chamaily']
+                imageUrl:
                   type: string
                   format: binary
               required:
@@ -120,35 +124,25 @@ paths:
         '201':
           description: Product created successfully
 
-    put:
-      summary: Update Product
+    get:
+      query:
+        sort:
+          name: sort
+          in: query
+          description: Sort products by price
+          required: false
+          schema:
+            type: string
+      summary: Get Products
       security:
         - bearerAuth: []
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: string
-                name:
-                  type: string
-                price:
-                  type: number
-                description:
-                  type: string
-                image:
-                  type: string
-                  format: binary
-              required:
-                - id
       responses:
         '200':
-          description: Product updated successfully
+          description:  Products retrieved successfully
 
-  /bid:
+  /bids:
     post:
+      /place:
       summary: Place Bid
       security:
         - bearerAuth: []
@@ -158,12 +152,9 @@ paths:
             schema:
               type: object
               properties:
-                productId:
-                  type: string
                 amount:
                   type: number
               required:
-                - productId
                 - amount
       responses:
         '201':
