@@ -21,7 +21,7 @@
 ## **Features**
 
 - **Frontend:** Developed with React.js for a dynamic and responsive user interface.
-- **Backend:** Powered by Node.js, PostgreSQL, Redis, and Prisma for scalable data management.
+- **Backend:** Powered by Node.js/TypeScript, Mongodb, and mongoose for models schema.
 - **Marketplace Functionalities:** 
   - Browse and search for art.
   - Add items to a wishlist or purchase directly.

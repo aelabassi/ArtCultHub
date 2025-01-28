@@ -23,8 +23,7 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      working-directory: backend
-      run: npm install
+      run: npm install --prefix backend
 
     - name: Run Vitest
       working-directory: backend
