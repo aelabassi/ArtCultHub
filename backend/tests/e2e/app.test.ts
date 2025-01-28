@@ -8,7 +8,6 @@ import {Request, Response} from 'express';
 import {app} from '../../src/server';
 import config from '../../src/config';
 import * as dotenv from 'dotenv';
-import { token } from "morgan";
 
 
 dotenv.config();

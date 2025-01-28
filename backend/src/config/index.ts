@@ -1,24 +1,27 @@
 import merge from 'lodash.merge';
 import {envSecrets, Secret} from '../@types';
+import devConfig from './dev';
+import prodConfig from './prod';
+import testingConfig from './testing';
 
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development' || "testing"
 const stage = process.env.STAGE || 'dev'
-let envConfig
+let envConfig: Partial<envSecrets>
 
 if (stage === 'prod') {
-  envConfig = require('./prod').default
+  envConfig = prodConfig
 } else if (stage === 'testing') {
-  envConfig = require('./testing').default
+  envConfig = testingConfig
 } else {
-  envConfig = require('./dev').default
+  envConfig = devConfig
 }
 
-export default merge<envSecrets, Secret>(
+export default merge<Partial<envSecrets>, Partial<envSecrets>>(
   {
     stage,
     nodeEnv: process.env.NODE_ENV,
-    port: 3000,
+    port: '3000',
     host: 'http://localhost',
     secret: {
       jwtSecret: process.env.JWT_SECRET,
