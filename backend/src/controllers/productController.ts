@@ -5,23 +5,23 @@ import { StatisticsModel } from '../models/Statistics';
 export const productController = {
   createProduct: async (req: Request, res: Response) => {
     try {
-      const { name, description, price, category, imageUrl } = req.body;
+      const { name, description, price, category, imageUrl} = req.body;
 
       if (!req.user) {
         return res.status(401).json({ message: 'Authentication required' });
       }
+    
+      const userId = req.user;
 
-      const userId = (req.user as any).id;
-
-      const product = await ProductModel.create({
+      const product = await new ProductModel({
+        user: userId,
         name,
         description,
         price,
         category,
         imageUrl,
-        creator: userId,
-        endingIn: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // Expires in 7 days
-      });
+        endingIn: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+      }).save();
 
       res.status(201).json(product);
     } catch (error) {

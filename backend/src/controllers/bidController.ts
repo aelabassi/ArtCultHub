@@ -10,10 +10,10 @@ export const bidController = {
       if (!req.user) {
         return res.status(401).json({ message: 'Authentication required' });
       }
-      const userId = (req.user as any).id;
+      const userId = req.user;
 
 
-      const product = await ProductModel.findById(productId);
+      const product = await ProductModel.findOne({user: userId});
 
       if (!product) {
         return res.status(404).json({ message: 'Product not found' });
@@ -23,16 +23,17 @@ export const bidController = {
         return res.status(400).json({ message: 'Bid must be higher than current bid' });
       }
 
-      const bid = await BidModel.create({
-        product: productId,
+      const bid = await new BidModel({
+        item: product._id,
         bidder: userId,
         amount
-      });
+      }).save();
 
       await ProductModel.findByIdAndUpdate(productId, { currentBid: amount });
 
       res.status(201).json(bid);
     } catch (error) {
+      console.error(error);
       res.status(500).json({ message: 'Error placing bid' });
     }
   },

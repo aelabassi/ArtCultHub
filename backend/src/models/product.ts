@@ -4,7 +4,7 @@ import { Product } from '../@types';
 export const ProductModel = model<Product>(
   'Product',
   new Schema({
-    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: false },
     name: { type: String, required: true },
     description: { type: String, required: true },
     price: { type: Number, required: true },

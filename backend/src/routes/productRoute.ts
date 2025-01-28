@@ -12,6 +12,6 @@ router.post('/create', authMiddleware, async (req, res) => {
       res.status(500).json({ message: 'Error creating product', error });
     }
   });
-router.get('/', productController.getProducts);
+router.get('/', authMiddleware, productController.getProducts);
 
 export default router;

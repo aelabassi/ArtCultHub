@@ -5,7 +5,7 @@ import { Bid } from '../@types';
 export const BidModel = model<Bid>(
     'Bid',
     new Schema({
-    item: { type: Schema.Types.ObjectId, ref: 'Item', required: true },
+    item: { type: Schema.Types.ObjectId, ref: 'Product', required: true },
     bidder: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     amount: { type: Number, required: true },
     timestamp: { type: Date, default: Date.now },

@@ -11,6 +11,6 @@ router.post('/place', authMiddleware, async (req, res) => {
       res.status(500).json({ message: 'Error placing bid', error });
     }
   });
-router.get('/:productId/history', bidController.getBidHistory);
+router.get('/:productId/history',authMiddleware, bidController.getBidHistory);
 
 export default router;
