@@ -93,9 +93,8 @@ paths:
         '200':
           description: Profile updated successfully
 
-  /products:
+  /products/create:
     post:
-    /create:
       summary: Create Product
       security:
         - bearerAuth: []
@@ -124,6 +123,7 @@ paths:
         '201':
           description: Product created successfully
 
+  /products?sort=price:
     get:
       query:
         sort:
@@ -140,9 +140,8 @@ paths:
         '200':
           description:  Products retrieved successfully
 
-  /bids:
+  /bids/place:
     post:
-      /place:
       summary: Place Bid
       security:
         - bearerAuth: []
@@ -160,6 +159,7 @@ paths:
         '201':
           description: Bid placed successfully
 
+  /bids:
     get:
       summary: Get Bids
       security:
